@@ -1,0 +1,222 @@
+{
+  "schema_version": 1,
+  "plugin_version": "0.1.0",
+  "service_count": 13,
+  "guide_revision": "2026-11-14.1",
+  "packaged_on": "2026-11-16",
+  "source_url": "https://ai.nmking.io/connect",
+  "source_manifest_sha256": "d968df4a02ddca3aa9b7c153f8385d8970256ab9117b57c96945bc8d1b090612",
+  "source_content_sha256": "efc138f430c474f90d0a766b2701b3f09edbcc37a2d3fb378c0fdbe37f7eac62",
+  "files": {
+    "services/canva.md": {
+      "sha256": "dc33f720e6e48474ced3fd132afc400a647feb657dfa6daa4d016720e611b4d1",
+      "type": "text/markdown"
+    },
+    "services/canva.json": {
+      "sha256": "7f7c83f29727d107fd4e43ffc432159d7fbdd93d49f2bad3da6aeaf0d22a82ac",
+      "type": "application/json"
+    },
+    "services/github.md": {
+      "sha256": "8f2517a87132db8eaf1406735899aa493c73bc3d03205dc14d4b20d9e35221b3",
+      "type": "text/markdown"
+    },
+    "services/github.json": {
+      "sha256": "d45d816b22cdf74bd4cc4bc6c7ece496291804ca74a4fd36ddc4267f77c9ce35",
+      "type": "application/json"
+    },
+    "services/notion.md": {
+      "sha256": "4e489203ac78f7aa3998697a831a619c12bbf973f3c3be88da8fafc15d575bc7",
+      "type": "text/markdown"
+    },
+    "services/notion.json": {
+      "sha256": "e698cd6b328db13e4750e7d9d28797e39ed23a34205623c7de85359a5ffb2254",
+      "type": "application/json"
+    },
+    "services/padlet.md": {
+      "sha256": "b828506a43737638b5ec2867a1f6c01962c700d47080004dd22171762aed593f",
+      "type": "text/markdown"
+    },
+    "services/padlet.json": {
+      "sha256": "ae3bbbdd1db6dcd022b28bb68f5cd72a491680f7e264e7708af1a298fa1f6146",
+      "type": "application/json"
+    },
+    "services/kahoot.md": {
+      "sha256": "64d3f6efa3df7b12ad72e114d14752d675dd21857ca56538a358f28644f35133",
+      "type": "text/markdown"
+    },
+    "services/kahoot.json": {
+      "sha256": "d36c4448bda7b314ace25a254361a587e5063cccfcbbdb21b7ed164dc0afed7b",
+      "type": "application/json"
+    },
+    "services/vercel.md": {
+      "sha256": "7b6d32c7c90effb62876cd6e0f2a428b44e777c8b7e4e320ec0c625ca9833892",
+      "type": "text/markdown"
+    },
+    "services/vercel.json": {
+      "sha256": "fc6da4488c49e43e385970a2482b930c71fc271c31cce11833e868ed13dfdbd6",
+      "type": "application/json"
+    },
+    "services/netlify.md": {
+      "sha256": "ff7b6c683c799d95e67c32d74e87b4755f9f54f297acc0dce63e5f9abfbdb7db",
+      "type": "text/markdown"
+    },
+    "services/netlify.json": {
+      "sha256": "56883f74e1350cd1eed8701aa3f6096ee4091116dac656f9e744db6a80bb208b",
+      "type": "application/json"
+    },
+    "services/cloudflare.md": {
+      "sha256": "74c93b9b22248858f49d29e8f4eb4cf068711165355c34d12951f25a75916dd7",
+      "type": "text/markdown"
+    },
+    "services/cloudflare.json": {
+      "sha256": "944a7918add02c23b23edbe1d0921ded7dca0a32f9757f5788552a5fdbe9df27",
+      "type": "application/json"
+    },
+    "services/colab.md": {
+      "sha256": "aee2f0885db2728d9e23b02a15f98f565bc548d5599f43521c013544f0155fa4",
+      "type": "text/markdown"
+    },
+    "services/colab.json": {
+      "sha256": "1ea99242c7cd383adebfa8113cf52c73db5eab3ff976fef7dd73064ed9a3eb32",
+      "type": "application/json"
+    },
+    "services/google-classroom.md": {
+      "sha256": "d80b403d4b4ec6ff7e1f5f223562980f9ccd3f718204afc796ef01c187bf0d59",
+      "type": "text/markdown"
+    },
+    "services/google-classroom.json": {
+      "sha256": "96cab059feaeb5d997da6f8735452c2ecb53260e719d5efc2f0d3736174e7988",
+      "type": "application/json"
+    },
+    "services/google-drive.md": {
+      "sha256": "67d3f2d08b0470eb6e1d0f1d63ebe8db98275ad957b8d83a746af7e982e44507",
+      "type": "text/markdown"
+    },
+    "services/google-drive.json": {
+      "sha256": "63238222156f6aaa1744f941c89bb2b1ef981632037c9f60150f934b3a22d989",
+      "type": "application/json"
+    },
+    "services/google-calendar.md": {
+      "sha256": "18414da3af35e848244b22b70eff9ee420e86e75dc31ad05414658228bb98ae1",
+      "type": "text/markdown"
+    },
+    "services/google-calendar.json": {
+      "sha256": "e800c6a78da74fd74783e5a241bff89dd808e224513c93946704aa33f92ccb19",
+      "type": "application/json"
+    },
+    "services/gmail.md": {
+      "sha256": "bc6bdfe91fa8d4ba96a039565be04d08315b66068f038ebeec6a7ca77b702411",
+      "type": "text/markdown"
+    },
+    "services/gmail.json": {
+      "sha256": "bfa2d0516035b6a95dc478ea0ab8163102130b38c596f8c9492bf007c20c94cb",
+      "type": "application/json"
+    }
+  },
+  "services": [
+    {
+      "id": "canva",
+      "name": "Canva",
+      "provider": "official",
+      "overall": "partial",
+      "resource_type": "presentation",
+      "tested_on": "2026-11-13"
+    },
+    {
+      "id": "github",
+      "name": "GitHub",
+      "provider": "official",
+      "overall": "blocked",
+      "resource_type": "repository_content",
+      "tested_on": "2026-11-13"
+    },
+    {
+      "id": "notion",
+      "name": "Notion",
+      "provider": "official",
+      "overall": "passed",
+      "resource_type": "private_draft_page",
+      "tested_on": "2026-11-13"
+    },
+    {
+      "id": "padlet",
+      "name": "Padlet",
+      "provider": "official",
+      "overall": "passed",
+      "resource_type": "post",
+      "tested_on": "2026-11-13"
+    },
+    {
+      "id": "kahoot",
+      "name": "Kahoot!",
+      "provider": "official",
+      "overall": "passed",
+      "resource_type": "question_in_test_quiz",
+      "tested_on": "2026-11-13"
+    },
+    {
+      "id": "vercel",
+      "name": "Vercel",
+      "provider": "official",
+      "overall": "passed",
+      "resource_type": "nonpersistent_sandbox_with_file",
+      "tested_on": "2026-11-13"
+    },
+    {
+      "id": "netlify",
+      "name": "Netlify",
+      "provider": "official",
+      "overall": "partial",
+      "resource_type": "site_and_deployment",
+      "tested_on": "2026-11-13"
+    },
+    {
+      "id": "cloudflare",
+      "name": "Cloudflare",
+      "provider": "official",
+      "overall": "deferred",
+      "resource_type": "not_selected",
+      "tested_on": "2026-11-13"
+    },
+    {
+      "id": "colab",
+      "name": "Google Colab",
+      "provider": "official",
+      "overall": "blocked",
+      "resource_type": "runtime_or_session",
+      "tested_on": "2026-11-13"
+    },
+    {
+      "id": "google-classroom",
+      "name": "Google Classroom",
+      "provider": "composio",
+      "overall": "partial",
+      "resource_type": "assignment_in_existing_test_course",
+      "tested_on": "2026-11-13"
+    },
+    {
+      "id": "google-drive",
+      "name": "Google Drive",
+      "provider": "composio",
+      "overall": "passed",
+      "resource_type": "synthetic_text_file_soft_delete",
+      "tested_on": "2026-11-13"
+    },
+    {
+      "id": "google-calendar",
+      "name": "Google Calendar",
+      "provider": "composio",
+      "overall": "not_tested",
+      "resource_type": "event_in_designated_test_calendar",
+      "tested_on": null
+    },
+    {
+      "id": "gmail",
+      "name": "Gmail",
+      "provider": "composio",
+      "overall": "not_tested",
+      "resource_type": "synthetic_draft_then_explicitly_approved_test_message",
+      "tested_on": null
+    }
+  ]
+}

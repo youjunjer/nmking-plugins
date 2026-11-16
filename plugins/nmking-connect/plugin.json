@@ -1,0 +1,30 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "nmking-connect",
+  "version": "0.1.0",
+  "description": "AI-readable setup and scoped verification guides for 13 services, with MCP and CLI choices.",
+  "author": {
+    "name": "小霸王有限公司 / NMKING",
+    "email": "nmkingtw@gmail.com",
+    "url": "https://ai.nmking.io"
+  },
+  "homepage": "https://ai.nmking.io/connect",
+  "repository": "https://github.com/youjunjer/nmking-plugins",
+  "keywords": ["codex", "mcp", "cli", "service-connections", "nmking"],
+  "extensions": {
+    "com.openai": {
+      "onboardingSkill": "./skills/nmking-service-connect/SKILL.md",
+      "interface": {
+        "displayName": "NMKING Connect",
+        "shortDescription": "13 項服務的 AI 連線設定與驗證指南",
+        "longDescription": "依任務選擇 MCP 或 CLI，沿用既有連線、引導個人授權，並按實測範圍驗證結果。包含 Canva、GitHub、Notion、Padlet、Kahoot!、Vercel、Netlify、Cloudflare、Colab、Classroom、Drive、Calendar 與 Gmail。安裝不會自動連接全部服務。",
+        "developerName": "小霸王有限公司 / NMKING",
+        "category": "Productivity",
+        "websiteURL": "https://ai.nmking.io/connect",
+        "defaultPrompt": [
+          "使用 NMKING Connect 協助我連接指定服務，先比較 MCP 與 CLI，確認方案後再設定。"
+        ]
+      }
+    }
+  }
+}

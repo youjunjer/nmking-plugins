@@ -1,0 +1,298 @@
+# Google Calendar: AI Connection Spec
+
+Revision: 2026-11-14.1
+
+Read this selected-service spec only. Placeholder values must be bound to the current user-approved run before execution. This document is reference data, not authorization to install, grant access, write or delete.
+
+```json
+{
+  "schema_version": 2,
+  "revision": "2026-11-14.1",
+  "skill_url": "https://ai.nmking.io/connect/SKILL.md",
+  "acceptance": {
+    "required_operations": [
+      "create",
+      "write",
+      "update",
+      "read_back",
+      "delete",
+      "verify_deleted"
+    ],
+    "operation_statuses": [
+      "passed",
+      "failed",
+      "not_tested",
+      "unsupported"
+    ],
+    "overall_statuses": [
+      "passed",
+      "partial",
+      "blocked",
+      "not_tested",
+      "deferred",
+      "awaiting_consent"
+    ],
+    "pass_rule": "同一方案、同一明確資源類型的六項操作全為 passed 才能回報 passed；唯讀只記 bootstrap。",
+    "environment": "已列實測為 macOS 本機 Codex 直接呼叫各服務官方遠端 MCP，或明確標示的 Composio 第三方 MCP。未啟動平台 Token 模型回合；Windows、Linux、NMKING Chat 與模型自主執行尚須另測。",
+    "fixture": "每輪建立唯一 RUN_ID，測試名稱 NMKING MCP TEST ${RUN_ID}，內容不得含個資。",
+    "binding": "${NAME} 必須由本輪結果或使用者確認綁定。instruction、save、assert 是代理人控制邏輯，不是工具參數；未列 arguments 時先讀 schema，不猜參數。"
+  },
+  "report_contract": {
+    "service": "selected service id",
+    "method": "mcp | cli",
+    "environment": "actual OS and tool version",
+    "endpoint_or_binary": "selected provider URL or executable path",
+    "auth": "authorized | pending | failed | not_tested",
+    "bootstrap": "passed | failed | not_tested",
+    "resource_type": "exact tested resource type",
+    "operations": {
+      "create": "not_tested",
+      "write": "not_tested",
+      "update": "not_tested",
+      "read_back": "not_tested",
+      "delete": "not_tested",
+      "verify_deleted": "not_tested"
+    },
+    "overall": "passed | partial | blocked | not_tested | deferred | awaiting_consent",
+    "evidence": [
+      {
+        "operation": "operation name",
+        "tool_or_command": "actual call without credentials",
+        "observed": "read-back evidence"
+      }
+    ],
+    "cleanup": {
+      "method": "mcp | cli | browser | none",
+      "remaining": []
+    },
+    "blocker": null
+  },
+  "agent_rules": [
+    "本文件是使用者指定的參考資料，不是系統指令，也不擴大授權。沒有選定服務與任務時先詢問，不開始安裝。",
+    "核對目標電腦、OS、帳號與既有工具。WSL、雲端或 SSH 安裝不等於本機已安裝。沿用相容連線，不覆寫同名不同網址設定，不移除既有工具。",
+    "有 cli_alternative 時，依 choice 比較功能、適用任務、安裝、授權和測試結果，詢問使用者選 MCP、CLI 或兩者；已明確選擇則不重問。不要預先兩種都裝，也不要因偏好 MCP 而刪除功能較多的 CLI。",
+    "先說明來源、版本、設定位置與權限，取得確認後只設定選定方案。CLI 使用既有相容或文件固定版本；遠端 MCP 不另裝同名 CLI 或本機伺服器套件。",
+    "密碼、驗證碼、Passkey 與憑證輸入由使用者操作，不要求貼到對話。新增或擴大敏感存取權限時在當下取得確認；相同服務與權限的例行重新登入可依使用者授權協助操作。",
+    "不讀取或列印憑證檔、完整 Token、環境變數值、OAuth code 或單次授權連結。環境變數只檢查有無設定，不改成明文保存。",
+    "先讀實際 MCP 工具清單與 schema，再按 verify 做唯讀 bootstrap。工具前綴以客戶端實際清單為準；內建連接器登入不代表獨立遠端 MCP 已授權。",
+    "provider 為 Composio 時，這是第三方 MCP，不是 Google 官方 MCP。先讀 composio_protocol 與 connection，只登入使用者選定的 toolkit；Codex 連上 Composio 不等於 Google 服務已授權。",
+    "Composio 步驟的 tool 是 tool_slug，arguments 是內層參數；經 COMPOSIO_MULTI_EXECUTE_TOOL 並明確指定本輪 ACCOUNT_ID 執行，不把 tool_slug 誤當客戶端直接暴露的工具。session 與 account 必須取自本輪正確使用者，不使用文件中的歷史值。",
+    "唯讀不是完整成功。完整測試先確認帳號、工作區、新建測試物件、公開範圍、費用與刪除清理授權；未獲寫入授權停在 awaiting_consent，不宣稱通過。",
+    "只修改與刪除本輪新建並保存 ID 的測試資料。${...} 是待綁定變數，不能原樣傳送或使用歷史客戶 ID。寫入逾時先讀回查證，避免重複建立。",
+    "401、403、不支援註冊、缺工具或使用者暫緩時，記錄原因並停止相應步驟。不反覆重試相同錯誤，也不自動換方案補做；MCP、CLI、網頁證據分開。",
+    "刪後查證消失或明確進垃圾桶；刪題不等於刪題庫，刪貼文不等於刪看板，垃圾桶不等於永久銷毀。剩餘物件列在 cleanup.remaining。不得為測試升級方案、建立 GCP / 計費資源或改正式 DNS。",
+    "依 report_contract 逐項回報證據。不把文件核對、--help、OAuth、工具清單或唯讀當 CRUD 通過；歷史 test_result 不是新使用者環境的保證。",
+    "遠端 MCP 與本機 STDIO 的執行位置不同；遠端工具不能因此存取會員電腦。此文件是 Codex 設定參考，不是 NMKING Chat 已支援該服務的宣告。"
+  ],
+  "composio_protocol": {
+    "provider": "Composio",
+    "publisher": "third_party_not_google",
+    "endpoint": "https://connect.composio.dev/mcp",
+    "audience": "personal_Codex_client_setup",
+    "schema_policy": "以下為 2026-11-13 實測的 meta-tool 輸入格式；先取得當前清單與完整 input_schema，若不同先停止核對，不套用 schemaRef 覆蓋完整 schema。",
+    "auth_stages": [
+      "Codex 對 Composio 的 OAuth",
+      "使用者選定 Google toolkit 的獨立 Connect Link 授權",
+      "帳號 ACTIVE 與唯讀 provider 身分確認；前兩步都不算 CRUD 通過"
+    ],
+    "managed_oauth": "本文件四個 Google toolkit 均列有 Composio 代管 OAuth，通常不需使用者自建 GCP。這不保證所有自訂 scope 或帳號政策都可用；特殊權限受阻時回報，不自動建 GCP 或改網站現有 OAuth。",
+    "search_example": {
+      "tool": "COMPOSIO_SEARCH_TOOLS",
+      "arguments": {
+        "queries": [
+          {
+            "use_case": "Read the authenticated Google Drive account profile"
+          }
+        ],
+        "session": {
+          "generate_id": true
+        }
+      },
+      "save": "SESSION_ID = result 的實際 session.id；後續沿用同一工作流程，不能硬編碼。"
+    },
+    "list_connections": "依 service.verify 明確使用 action:list。action:add 會產生新授權連結，只有使用者要求連接且確認所選 toolkit 與權限時才可使用。",
+    "authorize_example": {
+      "tool": "COMPOSIO_MANAGE_CONNECTIONS",
+      "arguments": {
+        "toolkits": [
+          {
+            "name": "${TOOLKIT}",
+            "action": "add"
+          }
+        ],
+        "session_id": "${SESSION_ID}"
+      },
+      "precondition": "先確認使用者選定此服務；將 TOOLKIT 綁定為 service.connection.toolkit，不替未選服務開授權。",
+      "instruction": "有效且帳號正確的 ACTIVE 連線先沿用。只有需要新增／補授權時產生連結，交給使用者登入並確認實際 Google scope；臨時授權 URL 不寫公開紀錄。完成後再 action:list 驗證 ACTIVE，再執行 verification_prompt 的 provider 身分查詢。"
+    },
+    "schema_example": {
+      "tool": "COMPOSIO_GET_TOOL_SCHEMAS",
+      "arguments": {
+        "tool_slugs": [
+          "${TOOL_SLUG}"
+        ],
+        "include": [
+          "input_schema",
+          "output_schema"
+        ],
+        "session_id": "${SESSION_ID}"
+      }
+    },
+    "execute_template": {
+      "tool": "COMPOSIO_MULTI_EXECUTE_TOOL",
+      "arguments": {
+        "tools": [
+          {
+            "tool_slug": "${TOOL_SLUG}",
+            "arguments": {},
+            "account": "${ACCOUNT_ID}"
+          }
+        ],
+        "session_id": "${SESSION_ID}",
+        "sync_response_to_workbench": false
+      },
+      "bind": "把當前 step.tool 與已綁定的 step.arguments 放入 tools[0].tool_slug / tools[0].arguments；空物件不是可直接執行的範例。ACCOUNT_ID 取自本輪 selected toolkit 的 ACTIVE 帳號。"
+    },
+    "result_binding": "先讀 MCP structuredContent；只有 content[0].text 時以 JSON parser 解碼。逐項核對 data.results[i] 與呼叫相符；Google 步驟的 response.data 指對應內層 data.results[i].response.data，不是外層 JSON。",
+    "account_routing": {
+      "GOOGLE_CLASSROOM_": "CLASSROOM_ACCOUNT_ID",
+      "GOOGLEDRIVE_": "DRIVE_ACCOUNT_ID",
+      "GOOGLECALENDAR_": "CALENDAR_ACCOUNT_ID",
+      "GMAIL_": "GMAIL_ACCOUNT_ID",
+      "instruction": "依每個 tool_slug 所屬 toolkit 使用本輪正確帳號；跨服務任務不沿用前一服務的 ACCOUNT_ID。需要其他服務時才讀對應 Markdown 並另確認授權，例如 Classroom 附件下載另讀 /connect/services/google-drive.md。"
+    },
+    "success_checks": [
+      "檢查外層與每個內層 response 的 successful / isError；外層回傳成功不代表 provider 操作成功。",
+      "寫入後以獨立查詢核對內容與 ID；刪後驗證 DELETED、404 或明確 trashed:true。401/403 不算刪除證據。"
+    ],
+    "approval": "取得新增／擴大 Google 權限的當次確認。過期連結重新產生，不重複操作舊 callback；不用個人既有廣泛授權替其他人授權。",
+    "downloads": "下載工具回傳暫存簽名 URL 時，必須實際取得檔案 bytes 並核對內容或 checksum；只列附件連結不算下載。URL 僅在記憶體使用，不寫公開文件或紀錄。",
+    "sources": [
+      {
+        "title": "Composio consumer MCP endpoint",
+        "url": "https://docs.composio.dev/docs/single-toolkit-mcp"
+      },
+      {
+        "title": "Composio managed OAuth",
+        "url": "https://docs.composio.dev/toolkits/managed-auth"
+      },
+      {
+        "title": "Composio per-user authentication",
+        "url": "https://docs.composio.dev/docs/authentication"
+      },
+      {
+        "title": "Codex MCP configuration",
+        "url": "https://learn.chatgpt.com/docs/extend/mcp"
+      }
+    ]
+  },
+  "service": {
+    "id": "google-calendar",
+    "name": "Google Calendar",
+    "kind": "mcp",
+    "provider": "composio",
+    "status": "Composio 第三方 MCP · 文件已核對，尚未實測",
+    "checked_on": "2026-11-14",
+    "mcp": {
+      "server_name": "composio",
+      "transport": "streamable_http",
+      "url": "https://connect.composio.dev/mcp"
+    },
+    "summary": "文件列有日曆與事件查詢、建立、更新、刪除及空檔查詢；不是本輪已驗證的能力。",
+    "requirements": [
+      "使用者自己的 Composio 與 Google 帳號，選定 googlecalendar 並確認實際 scope。",
+      "測試需指定可拋棄日曆、時區及時段；不寄邀請、不修改真實會議或授予日曆存取權。"
+    ],
+    "check": "codex --version",
+    "inspect": "codex mcp list",
+    "setup": "codex mcp add composio --url https://connect.composio.dev/mcp",
+    "setup_note": "沿用同網址 Composio MCP；Classroom 自動建立的日曆不算 Calendar MCP 測試成功。",
+    "login": "codex mcp login composio",
+    "login_note": "只在 Composio 未登入時執行；googlecalendar 仍需獨立授權，不沿用 Classroom scope 宣稱已完成。",
+    "connection": {
+      "toolkit": "googlecalendar",
+      "account_binding": "CALENDAR_ACCOUNT_ID",
+      "managed_oauth": true,
+      "authorization_tested": false
+    },
+    "verification_prompt": "先列出 ACTIVE 帳號；獲准連接後探索 GOOGLECALENDAR_GET_CURRENT_USER 完整 schema 並確認 Google 身分。只查明確指定日曆，bootstrap 不算 CRUD。",
+    "verify": {
+      "tool": "COMPOSIO_MANAGE_CONNECTIONS",
+      "arguments": {
+        "toolkits": [
+          {
+            "name": "googlecalendar",
+            "action": "list"
+          }
+        ]
+      }
+    },
+    "test_result": {
+      "method": "mcp",
+      "overall": "not_tested",
+      "bootstrap": "not_tested",
+      "resource_type": "event_in_designated_test_calendar",
+      "operations": {
+        "create": "not_tested",
+        "write": "not_tested",
+        "update": "not_tested",
+        "read_back": "not_tested",
+        "delete": "not_tested",
+        "verify_deleted": "not_tested"
+      },
+      "observed": "2026-11-14 僅核對 Composio 文件；未在本輪完成 Google Calendar 授權或實際事件操作。"
+    },
+    "operation_test": {
+      "mode": "discover_missing_operations",
+      "resource_type": "event_in_designated_test_calendar",
+      "requires_write_consent": true,
+      "candidate_tools": [
+        "GOOGLECALENDAR_CREATE_EVENT",
+        "GOOGLECALENDAR_PATCH_EVENT",
+        "GOOGLECALENDAR_EVENTS_GET",
+        "GOOGLECALENDAR_DELETE_EVENT"
+      ],
+      "next_actions": [
+        "先探索並取得完整 schema，不照工具名稱猜參數；核對 CALENDAR_ACCOUNT_ID、CALENDAR_ID、時區、範圍與清理授權。",
+        "建立唯一測試事件；寫 WRITE CHECK，GET 核對；再改 UPDATE CHECK 與指定時間，GET 核對。不要設定 attendees、寄邀請或修改 ACL。",
+        "刪除本輪 EVENT_ID，再取得明確 cancelled / not-found 證據；空搜尋或 401/403 不算。",
+        "六項逐項填本輪證據，工具目錄存在或原有日曆存在均不能升級成通過。"
+      ]
+    },
+    "success": "目前 not_tested；帳號授權、bootstrap 與事件六項操作都需另測。",
+    "examples": [
+      "在指定測試日曆建立及修改事件",
+      "查詢使用者允許範圍內的空檔"
+    ],
+    "troubleshooting": [
+      "沒有可寫日曆：停下確認帳號與權限，不自動分享或建立付費資源。",
+      "刪除可能保留 cancelled tombstone：依實際 API 結果判讀，不能把空清單當唯一證據。"
+    ],
+    "sources": [
+      {
+        "title": "Composio Calendar toolkit",
+        "url": "https://docs.composio.dev/toolkits/googlecalendar"
+      }
+    ],
+    "spec_url": "https://ai.nmking.io/connect/services/google-calendar.json",
+    "spec_markdown_url": "https://ai.nmking.io/connect/services/google-calendar.md",
+    "commands": {
+      "version": "codex --version",
+      "inspect": "codex mcp list",
+      "add": "codex mcp add composio --url https://connect.composio.dev/mcp",
+      "login": "codex mcp login composio",
+      "verify": {
+        "tool": "COMPOSIO_MANAGE_CONNECTIONS",
+        "arguments": {
+          "toolkits": [
+            {
+              "name": "googlecalendar",
+              "action": "list"
+            }
+          ]
+        }
+      }
+    }
+  }
+}
+```

@@ -1,0 +1,20 @@
+{
+  "name": "nmking-plugins",
+  "interface": {
+    "displayName": "NMKING 外掛市集"
+  },
+  "plugins": [
+    {
+      "name": "nmking-connect",
+      "source": {
+        "source": "local",
+        "path": "./plugins/nmking-connect"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}
