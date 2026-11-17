@@ -1,6 +1,6 @@
 # NMKING Connect: Service Index
 
-Plugin: 0.1.0
+Plugin: 0.1.1
 Guide revision: 2026-11-14.1
 Packaged on: 2026-11-16 (Asia/Taipei)
 Source: https://ai.nmking.io/connect

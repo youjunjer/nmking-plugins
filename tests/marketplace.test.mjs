@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { access, readFile, readdir } from "node:fs/promises";
+import { access, lstat, readFile, readdir } from "node:fs/promises";
 import test from "node:test";
 import { assertPublicDocument, checkPackage, references, root, serviceIds } from "../scripts/sync-connect.mjs";
 
@@ -34,6 +34,32 @@ test("portable and compatibility manifests agree on identity and presentation", 
   assert.deepEqual(portable.extensions["com.openai"].interface, compatibility.interface);
   assert.equal(portable.extensions["com.openai"].onboardingSkill, compatibility.onboardingSkill);
   assert.equal(compatibility.skills, "./skills/");
+});
+
+test("listing and composer icons are bundled square assets in both themes", async () => {
+  const ui = portable.extensions["com.openai"].interface;
+  for (const key of ["logo", "logoDark", "composerIcon", "composerIconDark"]) {
+    assert.equal(ui[key], "./skills/nmking-service-connect/assets/icon.svg", key);
+    const url = new URL(ui[key], new URL(directory, root));
+    assert.equal((await lstat(url)).isFile(), true);
+    const bytes = await readFile(url);
+    assert.ok(bytes.length < 5 * 1024 * 1024);
+    const svg = bytes.toString("utf8");
+    assert.match(svg, /^<svg xmlns="http:\/\/www.w3.org\/2000\/svg" viewBox="0 0 64 64">/);
+    assert.doesNotMatch(svg, /<script|<foreignObject|href=|url\(/i);
+  }
+  for (const key of ["brandColor", "brandColorDark"]) assert.match(ui[key], /^#[0-9A-F]{6}$/);
+});
+
+test("Skill interface points to the same bundled icon without adding tool dependencies", async () => {
+  const agent = await read(skillRoot + "agents/openai.yaml");
+  assert.match(agent, /display_name: "NMKING Connect"/);
+  for (const key of ["icon_small", "icon_large"]) {
+    assert.ok(agent.includes(`${key}: "./assets/icon.svg"`));
+  }
+  assert.match(agent, /\$nmking-service-connect/);
+  assert.doesNotMatch(agent, /dependencies:|tools:|mcp:/);
+  await access(new URL(skillRoot + "assets/icon.svg", root));
 });
 
 test("Skill routes to bundled references without loading all services", async () => {

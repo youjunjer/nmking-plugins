@@ -1,0 +1,7 @@
+interface:
+  display_name: "NMKING Connect"
+  short_description: "依需求選擇 MCP 或 CLI，協助設定與驗證 13 項服務連線"
+  icon_small: "./assets/icon.svg"
+  icon_large: "./assets/icon.svg"
+  brand_color: "#0878BA"
+  default_prompt: "使用 $nmking-service-connect 協助我連接指定服務，先比較 MCP 與 CLI，確認方案後再設定。"

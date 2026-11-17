@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "nmking-connect",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "AI-readable setup and scoped verification guides for 13 services, with MCP and CLI choices.",
   "author": {
     "name": "小霸王有限公司 / NMKING",
@@ -21,6 +21,12 @@
         "developerName": "小霸王有限公司 / NMKING",
         "category": "Productivity",
         "websiteURL": "https://ai.nmking.io/connect",
+        "logo": "./skills/nmking-service-connect/assets/icon.svg",
+        "logoDark": "./skills/nmking-service-connect/assets/icon.svg",
+        "composerIcon": "./skills/nmking-service-connect/assets/icon.svg",
+        "composerIconDark": "./skills/nmking-service-connect/assets/icon.svg",
+        "brandColor": "#0878BA",
+        "brandColorDark": "#59B8FF",
         "defaultPrompt": [
           "使用 NMKING Connect 協助我連接指定服務，先比較 MCP 與 CLI，確認方案後再設定。"
         ]
