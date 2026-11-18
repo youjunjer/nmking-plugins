@@ -1,8 +1,8 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "nmking-gmail",
-  "version": "0.1.0",
-  "description": "NMKING-authored Gmail connection guide. Skills only; no preconfigured MCP or authorization.",
+  "version": "0.2.0",
+  "description": "Independently installable Gmail MCP plugin with bundled server configuration and user-owned onboarding.",
   "author": {
     "name": "小霸王有限公司 / NMKING",
     "email": "nmkingtw@gmail.com",
@@ -12,19 +12,24 @@
   "repository": "https://github.com/youjunjer/nmking-plugins",
   "keywords": [
     "nmking",
-    "service-guide",
+    "mcp",
+    "account-connection",
     "gmail"
   ],
   "extensions": {
     "com.openai": {
       "onboardingSkill": "./skills/nmking-gmail-connect/SKILL.md",
+      "mcpServers": "./mcp.json",
       "interface": {
         "displayName": "Gmail",
-        "shortDescription": "Gmail 連線指南",
-        "longDescription": "NMKING 整理的 Gmail 連線與驗證指南。文件列有讀信、草稿、寄信、回覆、附件、標籤及垃圾桶工具；不得把內建 Gmail 連接器的結果算成本方案通過。 此版本只提供專屬 Skill 與文件，不內建或預先啟用 MCP；帳號與權限需個別確認。此方案透過 Composio 第三方 MCP，不是 Google 官方 MCP。",
+        "shortDescription": "Gmail MCP 外掛",
+        "longDescription": "NMKING 包裝的 Gmail MCP 外掛，內含真正的 MCP 伺服器宣告、獨立登入引導與操作 Skill。透過 Composio 第三方 MCP：先登入 Composio，再只授權 gmail。不是 Google 官方 MCP；不同服務的帳號和權限需分別確認。 安裝不代表已取得使用者授權或所有操作都已驗證；非服務供應商官方外掛。",
         "developerName": "小霸王有限公司 / NMKING",
         "category": "Productivity",
-        "capabilities": [],
+        "capabilities": [
+          "MCP",
+          "Account connection"
+        ],
         "websiteURL": "https://ai.nmking.io/connect#gmail",
         "logo": "./skills/nmking-gmail-connect/assets/icon.svg",
         "logoDark": "./skills/nmking-gmail-connect/assets/icon.svg",
@@ -32,7 +37,7 @@
         "composerIconDark": "./skills/nmking-gmail-connect/assets/icon.svg",
         "brandColor": "#CA3024",
         "defaultPrompt": [
-          "協助我連接 Gmail，先確認既有連線及 MCP／CLI 方案，需要授權時讓我確認。"
+          "完成 Gmail MCP 的登入連線，核對帳號並做唯讀確認，需要授權時讓我確認。"
         ]
       }
     }

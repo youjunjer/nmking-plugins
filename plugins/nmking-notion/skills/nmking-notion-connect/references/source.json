@@ -1,12 +1,15 @@
 {
   "schema_version": 1,
   "service_id": "notion",
-  "plugin_version": "0.1.0",
+  "plugin_version": "0.2.0",
   "guide_revision": "2026-11-14.1",
   "source_url": "https://ai.nmking.io/connect/services/notion.json",
   "files": {
     "service.md": "4e489203ac78f7aa3998697a831a619c12bbf973f3c3be88da8fafc15d575bc7",
     "service.json": "e698cd6b328db13e4750e7d9d28797e39ed23a34205623c7de85359a5ffb2254",
-    "../assets/icon.svg": "bcd58a4aadc46eb7b8a642e96017532bc69368c35ee2a0667d31027be0d110ba"
+    "../assets/icon.svg": "bcd58a4aadc46eb7b8a642e96017532bc69368c35ee2a0667d31027be0d110ba",
+    "connection.json": "8211a01f59c773c9c71b692b445ca1ad05a21e32f4bb13a6fc0029b824d31975",
+    "../../../mcp.json": "c5c50eaa1d907539f3140a23415301f3b29ccedd2c0f572ca436b506c05c46ed",
+    "../../../.mcp.json": "341007b60f009b202e9780637acd28a6aff5f36aeb67c2da3e4fdfe9376b6e1a"
   }
 }

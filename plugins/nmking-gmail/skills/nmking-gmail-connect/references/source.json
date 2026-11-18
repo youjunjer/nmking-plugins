@@ -1,12 +1,15 @@
 {
   "schema_version": 1,
   "service_id": "gmail",
-  "plugin_version": "0.1.0",
+  "plugin_version": "0.2.0",
   "guide_revision": "2026-11-14.1",
   "source_url": "https://ai.nmking.io/connect/services/gmail.json",
   "files": {
     "service.md": "bc6bdfe91fa8d4ba96a039565be04d08315b66068f038ebeec6a7ca77b702411",
     "service.json": "bfa2d0516035b6a95dc478ea0ab8163102130b38c596f8c9492bf007c20c94cb",
-    "../assets/icon.svg": "7d00472e4b3a47382fd8e5e81a8c88258a1e21f4a15783a50aee33970c1bb416"
+    "../assets/icon.svg": "7d00472e4b3a47382fd8e5e81a8c88258a1e21f4a15783a50aee33970c1bb416",
+    "connection.json": "a63d13bf8625ddeda50fb37578d71ac1e9d1868763ee15d6c4ead56bc149797d",
+    "../../../mcp.json": "49073cb90efe47f23d093ff26ad5f7dd7f12f45836c9369da97018f04b05d9eb",
+    "../../../.mcp.json": "99fa8ce715c3fd443e9ccaae6aeae728ab8f90389f9dbd8b40b6e55f2aebb1bc"
   }
 }

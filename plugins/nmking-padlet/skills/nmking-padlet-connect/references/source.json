@@ -1,12 +1,15 @@
 {
   "schema_version": 1,
   "service_id": "padlet",
-  "plugin_version": "0.1.0",
+  "plugin_version": "0.2.0",
   "guide_revision": "2026-11-14.1",
   "source_url": "https://ai.nmking.io/connect/services/padlet.json",
   "files": {
     "service.md": "b828506a43737638b5ec2867a1f6c01962c700d47080004dd22171762aed593f",
     "service.json": "ae3bbbdd1db6dcd022b28bb68f5cd72a491680f7e264e7708af1a298fa1f6146",
-    "../assets/icon.svg": "68dfda4815e29be81e675bf15745ffce700252749c325210e639155c042bf963"
+    "../assets/icon.svg": "68dfda4815e29be81e675bf15745ffce700252749c325210e639155c042bf963",
+    "connection.json": "3a230ad77e33d7d30913c51d28acfb6b4f6ac937131f9f275bb2b2360f55929d",
+    "../../../mcp.json": "48d7da56c456c448d0636edcf156c8a34004d2ee93076dfeb23d09892a007690",
+    "../../../.mcp.json": "f104fd394cc59217129aed43e6627239b715d0c005e5e61c27e1b19c7ea42039"
   }
 }

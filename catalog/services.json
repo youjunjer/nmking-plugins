@@ -1,19 +1,19 @@
 {
   "schema_version": 1,
-  "marketplace_version": "0.2.0",
+  "marketplace_version": "0.3.0",
   "services": [
-    { "id": "canva", "name": "Canva", "version": "0.1.0", "icon": "canva", "accent": "#007F8B" },
-    { "id": "github", "name": "GitHub", "version": "0.1.0", "icon": "github", "accent": "#181717" },
-    { "id": "notion", "name": "Notion", "version": "0.1.0", "icon": "notion", "accent": "#000000" },
-    { "id": "padlet", "name": "Padlet", "version": "0.1.0", "icon": "padlet", "accent": "#D51858" },
-    { "id": "kahoot", "name": "Kahoot!", "version": "0.1.0", "icon": "kahoot", "accent": "#46178F" },
-    { "id": "vercel", "name": "Vercel", "version": "0.1.0", "icon": "vercel", "accent": "#000000" },
-    { "id": "netlify", "name": "Netlify", "version": "0.1.0", "icon": "netlify", "accent": "#007F76" },
-    { "id": "cloudflare", "name": "Cloudflare", "version": "0.1.0", "icon": "cloudflare", "accent": "#B4570A" },
-    { "id": "colab", "name": "Google Colab", "version": "0.1.0", "icon": "googlecolab", "accent": "#8A5A00" },
-    { "id": "google-classroom", "name": "Google Classroom", "version": "0.1.0", "icon": "googleclassroom", "accent": "#08783F" },
-    { "id": "google-drive", "name": "Google Drive", "version": "0.1.0", "icon": "googledrive", "accent": "#2568CB" },
-    { "id": "google-calendar", "name": "Google Calendar", "version": "0.1.0", "icon": "googlecalendar", "accent": "#2568CB" },
-    { "id": "gmail", "name": "Gmail", "version": "0.1.0", "icon": "gmail", "accent": "#CA3024" }
+    { "id": "canva", "name": "Canva", "version": "0.2.0", "icon": "canva", "accent": "#007F8B" },
+    { "id": "github", "name": "GitHub", "version": "0.2.0", "icon": "github", "accent": "#181717" },
+    { "id": "notion", "name": "Notion", "version": "0.2.0", "icon": "notion", "accent": "#000000" },
+    { "id": "padlet", "name": "Padlet", "version": "0.2.0", "icon": "padlet", "accent": "#D51858" },
+    { "id": "kahoot", "name": "Kahoot!", "version": "0.2.0", "icon": "kahoot", "accent": "#46178F" },
+    { "id": "vercel", "name": "Vercel", "version": "0.2.0", "icon": "vercel", "accent": "#000000" },
+    { "id": "netlify", "name": "Netlify", "version": "0.2.0", "icon": "netlify", "accent": "#007F76" },
+    { "id": "cloudflare", "name": "Cloudflare", "version": "0.2.0", "icon": "cloudflare", "accent": "#B4570A" },
+    { "id": "colab", "name": "Google Colab", "version": "0.2.0", "icon": "googlecolab", "accent": "#8A5A00" },
+    { "id": "google-classroom", "name": "Google Classroom", "version": "0.2.0", "icon": "googleclassroom", "accent": "#08783F" },
+    { "id": "google-drive", "name": "Google Drive", "version": "0.2.0", "icon": "googledrive", "accent": "#2568CB" },
+    { "id": "google-calendar", "name": "Google Calendar", "version": "0.2.0", "icon": "googlecalendar", "accent": "#2568CB" },
+    { "id": "gmail", "name": "Gmail", "version": "0.2.0", "icon": "gmail", "accent": "#CA3024" }
   ]
 }

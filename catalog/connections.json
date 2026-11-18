@@ -1,0 +1,123 @@
+{
+  "schema_version": 1,
+  "checked_on": "2026-11-18",
+  "services": {
+    "canva": {
+      "server": "nmking-canva",
+      "provider": "official",
+      "transport": "streamable-http",
+      "url": "https://mcp.canva.com/mcp",
+      "authentication": "oauth",
+      "documentation": "https://www.canva.com/help/mcp-agent-setup/"
+    },
+    "github": {
+      "server": "nmking-github",
+      "provider": "composio",
+      "transport": "streamable-http",
+      "url": "https://connect.composio.dev/mcp",
+      "authentication": "oauth_and_toolkit",
+      "toolkit": "github",
+      "documentation": "https://docs.composio.dev/docs/composio-connect",
+      "note": "本外掛預設透過 Composio 第三方 MCP，以瀏覽器登入 GitHub。GitHub 官方遠端 MCP 的 Codex 設定目前要求 PAT；不把它誤稱為免權杖 OAuth 登入。"
+    },
+    "notion": {
+      "server": "nmking-notion",
+      "provider": "official",
+      "transport": "streamable-http",
+      "url": "https://mcp.notion.com/mcp",
+      "authentication": "oauth",
+      "documentation": "https://developers.notion.com/guides/mcp/overview"
+    },
+    "padlet": {
+      "server": "nmking-padlet",
+      "provider": "official",
+      "transport": "streamable-http",
+      "url": "https://mcp.padlet.com",
+      "authentication": "oauth",
+      "documentation": "https://padlet.help/l/en/article/pofbiabhv1-padlet-mcp-server-setup"
+    },
+    "kahoot": {
+      "server": "nmking-kahoot",
+      "provider": "official",
+      "transport": "streamable-http",
+      "url": "https://mcp.kahoot.it/mcp",
+      "authentication": "oauth",
+      "documentation": "https://support.kahoot.com/hc/en-us/articles/36770398743581-How-to-connect-ChatGPT-Claude-and-other-AI-Assistants-to-Kahoot-using-the-MCP-Server"
+    },
+    "vercel": {
+      "server": "nmking-vercel",
+      "provider": "official",
+      "transport": "streamable-http",
+      "url": "https://mcp.vercel.com",
+      "authentication": "oauth",
+      "documentation": "https://vercel.com/docs/agent-resources/vercel-mcp"
+    },
+    "netlify": {
+      "server": "nmking-netlify",
+      "provider": "official",
+      "transport": "streamable-http",
+      "url": "https://mcp.netlify.com/mcp",
+      "authentication": "oauth",
+      "documentation": "https://docs.netlify.com/build/build-with-ai/agent-setup-guides/agent-setup-overview/"
+    },
+    "cloudflare": {
+      "server": "nmking-cloudflare",
+      "provider": "official",
+      "transport": "streamable-http",
+      "url": "https://mcp.cloudflare.com/mcp",
+      "authentication": "oauth",
+      "documentation": "https://developers.cloudflare.com/agents/model-context-protocol/cloudflare/servers-for-cloudflare/"
+    },
+    "colab": {
+      "server": "nmking-colab",
+      "provider": "official",
+      "transport": "stdio",
+      "command": "uvx",
+      "args": [
+        "--python", "3.13",
+        "--from", "git+https://github.com/googlecolab/colab-mcp@b9ab3899e0f1fa493390b1fd6d54aa2e464ecdf1",
+        "colab-mcp"
+      ],
+      "authentication": "colab_browser_session",
+      "requirements": ["uv / uvx", "Git", "Python 3.13 (uv 可管理)", "本機瀏覽器中的 Google Colab"],
+      "documentation": "https://github.com/googlecolab/colab-mcp",
+      "note": "使用 Google 官方本機 MCP，而非需要額外 Cloud 認證的遠端 API。啟動後以 open_colab_browser_connection 在本機瀏覽器登入 Google 並連接 Colab；這不是 Codex 的遠端 OAuth 按鈕。首次安裝仍需具備 uv 與 Git。"
+    },
+    "google-classroom": {
+      "server": "nmking-google-classroom",
+      "provider": "composio",
+      "transport": "streamable-http",
+      "url": "https://connect.composio.dev/mcp",
+      "authentication": "oauth_and_toolkit",
+      "toolkit": "google_classroom",
+      "documentation": "https://docs.composio.dev/docs/composio-connect"
+    },
+    "google-drive": {
+      "server": "nmking-google-drive",
+      "provider": "composio",
+      "transport": "streamable-http",
+      "url": "https://connect.composio.dev/mcp",
+      "authentication": "oauth_and_toolkit",
+      "toolkit": "googledrive",
+      "documentation": "https://docs.composio.dev/docs/composio-connect"
+    },
+    "google-calendar": {
+      "server": "nmking-google-calendar",
+      "provider": "composio",
+      "transport": "streamable-http",
+      "url": "https://connect.composio.dev/mcp",
+      "authentication": "oauth_and_toolkit",
+      "toolkit": "googlecalendar",
+      "documentation": "https://docs.composio.dev/docs/composio-connect"
+    },
+    "gmail": {
+      "server": "nmking-gmail",
+      "provider": "composio",
+      "transport": "streamable-http",
+      "url": "https://connect.composio.dev/mcp",
+      "authentication": "oauth_and_toolkit",
+      "toolkit": "gmail",
+      "documentation": "https://docs.composio.dev/docs/composio-connect"
+    }
+  }
+}

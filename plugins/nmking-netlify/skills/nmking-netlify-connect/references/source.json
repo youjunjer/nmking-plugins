@@ -1,12 +1,15 @@
 {
   "schema_version": 1,
   "service_id": "netlify",
-  "plugin_version": "0.1.0",
+  "plugin_version": "0.2.0",
   "guide_revision": "2026-11-14.1",
   "source_url": "https://ai.nmking.io/connect/services/netlify.json",
   "files": {
     "service.md": "ff7b6c683c799d95e67c32d74e87b4755f9f54f297acc0dce63e5f9abfbdb7db",
     "service.json": "56883f74e1350cd1eed8701aa3f6096ee4091116dac656f9e744db6a80bb208b",
-    "../assets/icon.svg": "9b24ae427ee419c708b8bd1208ab5ca0972edd9ab8d472bc9bbc274e83299d23"
+    "../assets/icon.svg": "9b24ae427ee419c708b8bd1208ab5ca0972edd9ab8d472bc9bbc274e83299d23",
+    "connection.json": "309e7f3f7341b85286be3aa748e5ad3d60ddff2e0f9777526cfb690084823f35",
+    "../../../mcp.json": "11b3bff3ee6f932b9a1459b41673b71274ea2092441fb23b25b94a9f42772db1",
+    "../../../.mcp.json": "d2d7808735c0fa10fc994bab95db90719bca4eb9b41aacfebf1e7f6461e4ae3b"
   }
 }

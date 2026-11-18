@@ -1,23 +1,34 @@
 ---
 name: nmking-gmail-connect
-description: "Set up Gmail using its NMKING Connect guide. Compare available MCP and CLI options, reuse the correct connection, and verify only user-authorized operations for this service."
+description: "Onboard and use the bundled Gmail MCP server. Complete this plugin's user-owned login, verify the selected account, and use its actual MCP tools without adding duplicate global servers."
 ---
 
-# Gmail - NMKING Connect
+# Gmail MCP
 
-這是 Gmail 專用連線指南。外掛可獨立安裝與停用，不會安裝其他服務，不會預先啟用 MCP 或代替使用者授權。
+此外掛包含真正的 MCP 宣告。優先使用此外掛提供的獨立 MCP 識別名稱 `nmking-gmail`，不重複執行 codex mcp add、不覆寫使用者的全域設定，也不改用內建連接器或 CLI 後宣稱 MCP 成功。
 
-## 操作
+## 現行連線
 
-1. 讀 [此服務規格](references/service.md)。同目錄的 service.json 是等價機器可讀版本，不必同時讀兩份。來源與文件雜湊見 references/source.json。
-2. 確認本次任務、執行電腦、OS、正確帳號與既有連線；相容且帳號正確時先沿用，不覆寫其他設定。
-3. 依 choice 與 cli_alternative 比較 MCP／CLI；使用者已選方案就沿用，否則先詢問。只在取得選定服務設定的同意後執行必要安裝命令，不自動安裝兩種方案。
-4. 密碼、驗證碼與 Passkey 由使用者在服務介面輸入；新增或擴大存取權限時，說明實際權限並取得當次確認。不要求貼憑證，不自行建立 GCP 或計費資源。
-5. 先讀實際工具清單、完整 schema 或 CLI --help，再核對帳號與唯讀 bootstrap。OAuth、工具清單或唯讀成功不代表完整操作通過。
-6. 完整測試依 operation_test；先確認新建測試資料、公開範圍、費用與刪除清理授權。只操作本輪綁定的測試 ID，寫入結果不明先讀回，不拿真實學生、客戶或郵件當測試資料。
-7. 按 report_contract 回報建立、寫入、修改、讀回、刪除、刪後確認與保留資源。MCP、CLI、網頁證據分開；401／403／缺工具即記錄阻礙，不盲目換方案。
+先讀 [connection.json](references/connection.json)，這是本版實際端點、傳輸與登入方式。
+透過 Composio 第三方 MCP：先登入 Composio，再只授權 gmail。不是 Google 官方 MCP；不同服務的帳號和權限需分別確認。
 
+使用者要求連接時，可在此外掛介面啟動登入，或執行 `codex mcp login nmking-gmail`。這是已安裝外掛的識別名稱，不需要另加全域伺服器。
 
-此 Google 服務透過 Composio 第三方 MCP，不是 Google 官方 MCP。依本文件的 toolkit 與 account_routing 綁定正確帳號；連上 Composio 不等於已取得 Google 授權。需要其他 Google 服務時，另請使用者選擇對應外掛與確認權限，不在此自動啟用。
+## 安裝後登入與查證
 
-保留原 test_result 日期與限制。安裝外掛不是新的服務實測，也不代表 NMKING Chat 已整合此服務。品牌圖示只用於辨識服務，此外掛由 NMKING 編寫，非服務供應商官方外掛。
+1. 先完成此外掛所帶 Composio MCP 的 OAuth。連上 Composio 不等於服務已授權；不得把內建連接器登入當成此外掛成功。
+2. 只為 toolkit `gmail` 查詢現有連線。先讀目前 COMPOSIO_SEARCH_TOOLS、COMPOSIO_MANAGE_CONNECTIONS 等實際 schema，不硬套歷史參數。相同帳號且 ACTIVE 時先沿用；多個帳號時先請使用者選擇。
+3. 若所選 toolkit 尚未連線，說明 Composio 是第三方及實際權限，取得使用者對該服務的確認，再產生新的 Connect Link；讓使用者在瀏覽器登入並親自確認。不要替其他 toolkit 開授權。
+4. 用目前可用的 WAIT_FOR_CONNECTIONS 或連線查詢確認 ACTIVE，再呼叫此服務的唯讀身分／帳號工具，明確綁定本輪 ACCOUNT_ID。Composio meta-tool 與內層 tool_slug／arguments 分開，先讀完整 schema。不同 toolkit 不得誤用同一個帳號 ID；文件中的歷史值與變數不能直接送出。
+5. 只有需要跨服務任務時，才另請使用者選擇其他外掛／帳號與授權；共用 Composio 端點不是跨服務全權授權。
+
+## 任務與驗證界線
+
+- 先確認正確帳號與任務。密碼、驗證碼與 Passkey 由使用者在服務介面輸入，不要求貼進對話；Token、secret 與臨時授權連結不得記錄或回傳。
+- 安裝只加入此外掛的 MCP，不自動替使用者確認 OAuth 同意、購買方案、啟用 GCP 或建立計費資源。新增／擴大權限仍須當次確認。
+- OAuth 成功、工具清單或唯讀只代表各自階段，不是完整操作通過。寫入、刪除、部署與費用依本次任務授權，完整測試前先確認新建測試資料及清理範圍。
+- 執行前讀目前工具清單與完整 schema；401／403／缺工具／帳號不符時停止該步並回報，不盲目重試或以另一方案補做。寫入結果不明先讀回，避免重複建立。
+- [service.md](references/service.md) 與同目錄 service.json 保留舊版公開規格、CLI 選項及歷史測試結果。它們不是本版登入結果；若歷史端點或安裝命令與 connection.json 不同，以現行連線檔和已捆綁 MCP 為準，不照舊命令重複加伺服器。
+- 保留原 test_result 日期與限制，依 report_contract 分別回報驗證結果及剩餘物件。不把 MCP 設定、套件安裝或原個人連線的測試誤稱為本外掛已通過帳號操作。
+
+此套件由 NMKING 包裝，非服務供應商官方外掛；不代表 NMKING Chat 已完成相同整合。

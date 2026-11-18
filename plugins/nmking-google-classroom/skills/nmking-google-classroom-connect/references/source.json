@@ -1,12 +1,15 @@
 {
   "schema_version": 1,
   "service_id": "google-classroom",
-  "plugin_version": "0.1.0",
+  "plugin_version": "0.2.0",
   "guide_revision": "2026-11-14.1",
   "source_url": "https://ai.nmking.io/connect/services/google-classroom.json",
   "files": {
     "service.md": "d80b403d4b4ec6ff7e1f5f223562980f9ccd3f718204afc796ef01c187bf0d59",
     "service.json": "96cab059feaeb5d997da6f8735452c2ecb53260e719d5efc2f0d3736174e7988",
-    "../assets/icon.svg": "a9c23fa43fa95b72c3432f604b3048501194a971dd41ee7bf7682dbb03e2764f"
+    "../assets/icon.svg": "a9c23fa43fa95b72c3432f604b3048501194a971dd41ee7bf7682dbb03e2764f",
+    "connection.json": "1256958180c415e78e9c46d77f8e98f2871dfdc1020cb2da5b87a02efdb181b0",
+    "../../../mcp.json": "c0e266b5934dc1bf2a6ee69899d0585753e28ff0cfa30e3013f8e521c926150d",
+    "../../../.mcp.json": "7aace4e6380815665d38b92d4be0ff67e29c559bc2f069f33a1a07e262b59784"
   }
 }

@@ -1,12 +1,15 @@
 {
   "schema_version": 1,
   "service_id": "google-calendar",
-  "plugin_version": "0.1.0",
+  "plugin_version": "0.2.0",
   "guide_revision": "2026-11-14.1",
   "source_url": "https://ai.nmking.io/connect/services/google-calendar.json",
   "files": {
     "service.md": "18414da3af35e848244b22b70eff9ee420e86e75dc31ad05414658228bb98ae1",
     "service.json": "e800c6a78da74fd74783e5a241bff89dd808e224513c93946704aa33f92ccb19",
-    "../assets/icon.svg": "41d3d41c8af6cbc1356c3e38c98c47815942e15769d11f60f1c190f25da77ff2"
+    "../assets/icon.svg": "41d3d41c8af6cbc1356c3e38c98c47815942e15769d11f60f1c190f25da77ff2",
+    "connection.json": "67492f84f1ff5d52d123dff217f3f4145322f93727e20d8728b2c3a664eb27a9",
+    "../../../mcp.json": "6ab2597850ae144bc45ce58366cae030f81e69329cc6081138e9f7acc72a08c0",
+    "../../../.mcp.json": "06690d234249b741916c3568c3a2977a5fd5017822d8e76787789d659168aa1c"
   }
 }

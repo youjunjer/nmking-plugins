@@ -1,12 +1,15 @@
 {
   "schema_version": 1,
   "service_id": "google-drive",
-  "plugin_version": "0.1.0",
+  "plugin_version": "0.2.0",
   "guide_revision": "2026-11-14.1",
   "source_url": "https://ai.nmking.io/connect/services/google-drive.json",
   "files": {
     "service.md": "67d3f2d08b0470eb6e1d0f1d63ebe8db98275ad957b8d83a746af7e982e44507",
     "service.json": "63238222156f6aaa1744f941c89bb2b1ef981632037c9f60150f934b3a22d989",
-    "../assets/icon.svg": "4f223603737ee824e6adffcf27425803dd02153f21b655a56ea9870905e185d0"
+    "../assets/icon.svg": "4f223603737ee824e6adffcf27425803dd02153f21b655a56ea9870905e185d0",
+    "connection.json": "111d2f5355fca5dd8f5daf325c530aa9c8f083ced9b260d880fdf89984c4c3b9",
+    "../../../mcp.json": "95280008060383f3fb964361d6acd30ad14ace0731afea74c62a1a182208a6af",
+    "../../../.mcp.json": "9c0fab34de3bd5f903112e3e8b66764f1b7735399a4bf4d691e78bfa50f6ae3f"
   }
 }

@@ -1,12 +1,15 @@
 {
   "schema_version": 1,
   "service_id": "kahoot",
-  "plugin_version": "0.1.0",
+  "plugin_version": "0.2.0",
   "guide_revision": "2026-11-14.1",
   "source_url": "https://ai.nmking.io/connect/services/kahoot.json",
   "files": {
     "service.md": "64d3f6efa3df7b12ad72e114d14752d675dd21857ca56538a358f28644f35133",
     "service.json": "d36c4448bda7b314ace25a254361a587e5063cccfcbbdb21b7ed164dc0afed7b",
-    "../assets/icon.svg": "90f04f03ace93c2c827b524f7894eb306dff66925984e29ca8b7bb75c716c28f"
+    "../assets/icon.svg": "90f04f03ace93c2c827b524f7894eb306dff66925984e29ca8b7bb75c716c28f",
+    "connection.json": "53db8fbe96aea9c695bc8ddc2c83f5d5b433577ff7f3dfd5c4da44f373fa6353",
+    "../../../mcp.json": "a879bb27cbfe8b1d7c678739acfbe68589d66ee306c31665dacd93e9f2529948",
+    "../../../.mcp.json": "17b75a49d0542944e1643b72058cf1252b8b01786e9028130c313cbc419f2ff1"
   }
 }

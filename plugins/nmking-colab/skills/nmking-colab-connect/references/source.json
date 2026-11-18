@@ -1,12 +1,15 @@
 {
   "schema_version": 1,
   "service_id": "colab",
-  "plugin_version": "0.1.0",
+  "plugin_version": "0.2.0",
   "guide_revision": "2026-11-14.1",
   "source_url": "https://ai.nmking.io/connect/services/colab.json",
   "files": {
     "service.md": "aee2f0885db2728d9e23b02a15f98f565bc548d5599f43521c013544f0155fa4",
     "service.json": "1ea99242c7cd383adebfa8113cf52c73db5eab3ff976fef7dd73064ed9a3eb32",
-    "../assets/icon.svg": "c65706893fdd0dcdb28ec0e7d7d7e9ce1f48ab412753efc7af3674f80a4257ff"
+    "../assets/icon.svg": "c65706893fdd0dcdb28ec0e7d7d7e9ce1f48ab412753efc7af3674f80a4257ff",
+    "connection.json": "279bb5463650cdf78790f4fef72336db98da06e31b77f3c3f0797850342d61ba",
+    "../../../mcp.json": "7f5848144518af3d0cac50dd556eedc4fe9e800d22db1feaae9e0df7c59b872b",
+    "../../../.mcp.json": "e79ca1a82f42101acdcca19f6fe1a9f848d06e76dc6f72ddf8db39c7d9b4d99f"
   }
 }

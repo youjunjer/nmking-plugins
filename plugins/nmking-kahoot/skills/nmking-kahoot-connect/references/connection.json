@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "service_id": "kahoot",
+  "plugin_name": "nmking-kahoot",
+  "plugin_version": "0.2.0",
+  "checked_on": "2026-11-18",
+  "server": "nmking-kahoot",
+  "provider": "official",
+  "transport": "streamable-http",
+  "url": "https://mcp.kahoot.it/mcp",
+  "authentication": "oauth",
+  "documentation": "https://support.kahoot.com/hc/en-us/articles/36770398743581-How-to-connect-ChatGPT-Claude-and-other-AI-Assistants-to-Kahoot-using-the-MCP-Server",
+  "packaged_verification": {
+    "scope": "configuration_and_public_protocol",
+    "account_authorization": "not_tested",
+    "resource_operations": "not_tested"
+  },
+  "historical_spec_note": "service.json retains the previous guide and operation results; use this connection file for the current bundled MCP."
+}

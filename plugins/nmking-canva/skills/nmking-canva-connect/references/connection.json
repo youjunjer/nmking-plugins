@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "service_id": "canva",
+  "plugin_name": "nmking-canva",
+  "plugin_version": "0.2.0",
+  "checked_on": "2026-11-18",
+  "server": "nmking-canva",
+  "provider": "official",
+  "transport": "streamable-http",
+  "url": "https://mcp.canva.com/mcp",
+  "authentication": "oauth",
+  "documentation": "https://www.canva.com/help/mcp-agent-setup/",
+  "packaged_verification": {
+    "scope": "configuration_and_public_protocol",
+    "account_authorization": "not_tested",
+    "resource_operations": "not_tested"
+  },
+  "historical_spec_note": "service.json retains the previous guide and operation results; use this connection file for the current bundled MCP."
+}

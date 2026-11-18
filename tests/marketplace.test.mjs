@@ -28,7 +28,7 @@ test("main marketplace exposes independently registered services, not the legacy
   }
 });
 
-test("portable and compatibility manifests agree on identity and presentation", () => {
+test("legacy aggregate manifests retain identity and presentation", () => {
   assert.equal(portable.$schema, "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json");
   assert.match(portable.version, /^\d+\.\d+\.\d+$/);
   for (const key of ["name", "version", "description", "author", "homepage", "repository"]) {
@@ -39,7 +39,7 @@ test("portable and compatibility manifests agree on identity and presentation", 
   assert.equal(compatibility.skills, "./skills/");
 });
 
-test("listing and composer icons are bundled square assets in both themes", async () => {
+test("legacy aggregate icons remain bundled square assets in both themes", async () => {
   const ui = portable.extensions["com.openai"].interface;
   for (const key of ["logo", "logoDark", "composerIcon", "composerIconDark"]) {
     assert.equal(ui[key], "./skills/nmking-service-connect/assets/icon.svg", key);
@@ -54,7 +54,7 @@ test("listing and composer icons are bundled square assets in both themes", asyn
   for (const key of ["brandColor", "brandColorDark"]) assert.match(ui[key], /^#[0-9A-F]{6}$/);
 });
 
-test("Skill interface points to the same bundled icon without adding tool dependencies", async () => {
+test("legacy aggregate Skill keeps its bundled icon and unchanged dependencies", async () => {
   const agent = await read(skillRoot + "agents/openai.yaml");
   assert.match(agent, /display_name: "NMKING Connect"/);
   for (const key of ["icon_small", "icon_large"]) {
@@ -65,7 +65,7 @@ test("Skill interface points to the same bundled icon without adding tool depend
   await access(new URL(skillRoot + "assets/icon.svg", root));
 });
 
-test("Skill routes to bundled references without loading all services", async () => {
+test("legacy aggregate Skill retains its selective reference routing", async () => {
   const frontmatter = skill.match(/^---\nname: ([a-z0-9-]+)\ndescription: (.+)\n---\n/);
   assert.ok(frontmatter);
   assert.equal(frontmatter[1], "nmking-service-connect");
@@ -77,7 +77,7 @@ test("Skill routes to bundled references without loading all services", async ()
   assert.deepEqual(names, ["nmking-service-connect"]);
 });
 
-test("installation ships no automatically enabled MCP, hooks or credential configuration", async () => {
+test("legacy aggregate remains Skills-only without MCP, hooks or credentials", async () => {
   for (const name of ["mcp.json", ".mcp.json", ".app.json", "hooks", "scripts", ".env", ".codex"]) {
     await assert.rejects(access(new URL(directory + name, root)));
   }

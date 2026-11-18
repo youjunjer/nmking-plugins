@@ -1,12 +1,15 @@
 {
   "schema_version": 1,
   "service_id": "cloudflare",
-  "plugin_version": "0.1.0",
+  "plugin_version": "0.2.0",
   "guide_revision": "2026-11-14.1",
   "source_url": "https://ai.nmking.io/connect/services/cloudflare.json",
   "files": {
     "service.md": "74c93b9b22248858f49d29e8f4eb4cf068711165355c34d12951f25a75916dd7",
     "service.json": "944a7918add02c23b23edbe1d0921ded7dca0a32f9757f5788552a5fdbe9df27",
-    "../assets/icon.svg": "f6db9550281b50e9f5e0ad15bfcbe3eb2c37ecc4f91e1be91688eeb729fd14b0"
+    "../assets/icon.svg": "f6db9550281b50e9f5e0ad15bfcbe3eb2c37ecc4f91e1be91688eeb729fd14b0",
+    "connection.json": "54e9969e234a81d3d2e9adea2ccd3263c4da730ef5fc704c8d764d0cd23d82bb",
+    "../../../mcp.json": "1d18b3e29ebf9ad1ebd281a801221388c4a4dd16810626449d333a41ba237f71",
+    "../../../.mcp.json": "66ac117de20703d22e4ad9cc1dc5d33ba02cfdfce9dc554b2c5eb97911c0f000"
   }
 }

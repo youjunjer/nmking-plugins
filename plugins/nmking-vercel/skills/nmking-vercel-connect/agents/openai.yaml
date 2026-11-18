@@ -1,7 +1,7 @@
 interface:
   display_name: "Vercel"
-  short_description: "使用 NMKING 專屬指南，協助設定與驗證 Vercel 的 MCP／CLI 服務連線"
+  short_description: "使用此外掛的 Vercel MCP，完成個人登入並核對帳號及目前可用的實際工具"
   icon_small: "./assets/icon.svg"
   icon_large: "./assets/icon.svg"
   brand_color: "#000000"
-  default_prompt: "使用 $nmking-vercel-connect 協助我連接 Vercel，先確認方案，需要授權時讓我確認。"
+  default_prompt: "使用 $nmking-vercel-connect 完成 Vercel MCP 登入連線，先核對帳號並做唯讀確認。"

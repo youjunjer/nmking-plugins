@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "nmking-vercel": {
+      "type": "http",
+      "url": "https://mcp.vercel.com"
+    }
+  }
+}

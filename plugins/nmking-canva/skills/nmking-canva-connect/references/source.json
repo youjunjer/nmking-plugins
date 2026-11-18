@@ -1,12 +1,15 @@
 {
   "schema_version": 1,
   "service_id": "canva",
-  "plugin_version": "0.1.0",
+  "plugin_version": "0.2.0",
   "guide_revision": "2026-11-14.1",
   "source_url": "https://ai.nmking.io/connect/services/canva.json",
   "files": {
     "service.md": "dc33f720e6e48474ced3fd132afc400a647feb657dfa6daa4d016720e611b4d1",
     "service.json": "7f7c83f29727d107fd4e43ffc432159d7fbdd93d49f2bad3da6aeaf0d22a82ac",
-    "../assets/icon.svg": "b0e91c45bf4c8b6448612b65883db11081e994735c730375af6a57d643fc42d0"
+    "../assets/icon.svg": "b0e91c45bf4c8b6448612b65883db11081e994735c730375af6a57d643fc42d0",
+    "connection.json": "b24549e09221d931276d02244dfd4fbd2a5fe477b266c26ee6e6b9abdf19ab00",
+    "../../../mcp.json": "5a90ce40714d395c85ad037c74e69c6cbbe799b89356596264f69b4bf2d83524",
+    "../../../.mcp.json": "7555ddf8054d60fd0d5f1326e2aed130ae32ea5a299349014b1c4cbb07932ca0"
   }
 }

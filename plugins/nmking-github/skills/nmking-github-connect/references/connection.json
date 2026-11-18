@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "service_id": "github",
+  "plugin_name": "nmking-github",
+  "plugin_version": "0.2.0",
+  "checked_on": "2026-11-18",
+  "server": "nmking-github",
+  "provider": "composio",
+  "transport": "streamable-http",
+  "url": "https://connect.composio.dev/mcp",
+  "authentication": "oauth_and_toolkit",
+  "toolkit": "github",
+  "documentation": "https://docs.composio.dev/docs/composio-connect",
+  "note": "本外掛預設透過 Composio 第三方 MCP，以瀏覽器登入 GitHub。GitHub 官方遠端 MCP 的 Codex 設定目前要求 PAT；不把它誤稱為免權杖 OAuth 登入。",
+  "packaged_verification": {
+    "scope": "configuration_and_public_protocol",
+    "account_authorization": "not_tested",
+    "resource_operations": "not_tested"
+  },
+  "historical_spec_note": "service.json retains the previous guide and operation results; use this connection file for the current bundled MCP."
+}

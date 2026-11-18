@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "service_id": "google-calendar",
+  "plugin_name": "nmking-google-calendar",
+  "plugin_version": "0.2.0",
+  "checked_on": "2026-11-18",
+  "server": "nmking-google-calendar",
+  "provider": "composio",
+  "transport": "streamable-http",
+  "url": "https://connect.composio.dev/mcp",
+  "authentication": "oauth_and_toolkit",
+  "toolkit": "googlecalendar",
+  "documentation": "https://docs.composio.dev/docs/composio-connect",
+  "packaged_verification": {
+    "scope": "configuration_and_public_protocol",
+    "account_authorization": "not_tested",
+    "resource_operations": "not_tested"
+  },
+  "historical_spec_note": "service.json retains the previous guide and operation results; use this connection file for the current bundled MCP."
+}

@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "service_id": "cloudflare",
+  "plugin_name": "nmking-cloudflare",
+  "plugin_version": "0.2.0",
+  "checked_on": "2026-11-18",
+  "server": "nmking-cloudflare",
+  "provider": "official",
+  "transport": "streamable-http",
+  "url": "https://mcp.cloudflare.com/mcp",
+  "authentication": "oauth",
+  "documentation": "https://developers.cloudflare.com/agents/model-context-protocol/cloudflare/servers-for-cloudflare/",
+  "packaged_verification": {
+    "scope": "configuration_and_public_protocol",
+    "account_authorization": "not_tested",
+    "resource_operations": "not_tested"
+  },
+  "historical_spec_note": "service.json retains the previous guide and operation results; use this connection file for the current bundled MCP."
+}

@@ -1,7 +1,7 @@
 {
   "name": "nmking-google-drive",
-  "version": "0.1.0",
-  "description": "NMKING-authored Google Drive connection guide. Skills only; no preconfigured MCP or authorization.",
+  "version": "0.2.0",
+  "description": "Independently installable Google Drive MCP plugin with bundled server configuration and user-owned onboarding.",
   "author": {
     "name": "小霸王有限公司 / NMKING",
     "email": "nmkingtw@gmail.com",
@@ -11,18 +11,23 @@
   "repository": "https://github.com/youjunjer/nmking-plugins",
   "keywords": [
     "nmking",
-    "service-guide",
+    "mcp",
+    "account-connection",
     "google-drive"
   ],
   "skills": "./skills/",
   "onboardingSkill": "./skills/nmking-google-drive-connect/SKILL.md",
+  "mcpServers": "./.mcp.json",
   "interface": {
     "displayName": "Google Drive",
-    "shortDescription": "Google Drive 連線指南",
-    "longDescription": "NMKING 整理的 Google Drive 連線與驗證指南。在指定測試資料夾建立、寫入、修改、下載合成文字檔並移至垃圾桶；不推論已測分享權限、所有 Office 格式或永久刪除。 此版本只提供專屬 Skill 與文件，不內建或預先啟用 MCP；帳號與權限需個別確認。此方案透過 Composio 第三方 MCP，不是 Google 官方 MCP。",
+    "shortDescription": "Google Drive MCP 外掛",
+    "longDescription": "NMKING 包裝的 Google Drive MCP 外掛，內含真正的 MCP 伺服器宣告、獨立登入引導與操作 Skill。透過 Composio 第三方 MCP：先登入 Composio，再只授權 googledrive。不是 Google 官方 MCP；不同服務的帳號和權限需分別確認。 安裝不代表已取得使用者授權或所有操作都已驗證；非服務供應商官方外掛。",
     "developerName": "小霸王有限公司 / NMKING",
     "category": "Productivity",
-    "capabilities": [],
+    "capabilities": [
+      "MCP",
+      "Account connection"
+    ],
     "websiteURL": "https://ai.nmking.io/connect#google-drive",
     "logo": "./skills/nmking-google-drive-connect/assets/icon.svg",
     "logoDark": "./skills/nmking-google-drive-connect/assets/icon.svg",
@@ -30,7 +35,12 @@
     "composerIconDark": "./skills/nmking-google-drive-connect/assets/icon.svg",
     "brandColor": "#2568CB",
     "defaultPrompt": [
-      "協助我連接 Google Drive，先確認既有連線及 MCP／CLI 方案，需要授權時讓我確認。"
+      "完成 Google Drive MCP 的登入連線，核對帳號並做唯讀確認，需要授權時讓我確認。"
     ]
+  },
+  "extensions": {
+    "com.openai": {
+      "onboardingSkill": "./skills/nmking-google-drive-connect/SKILL.md"
+    }
   }
 }
