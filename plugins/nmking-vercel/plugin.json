@@ -1,0 +1,40 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "nmking-vercel",
+  "version": "0.1.0",
+  "description": "NMKING-authored Vercel connection guide. Skills only; no preconfigured MCP or authorization.",
+  "author": {
+    "name": "小霸王有限公司 / NMKING",
+    "email": "nmkingtw@gmail.com",
+    "url": "https://ai.nmking.io"
+  },
+  "homepage": "https://ai.nmking.io/connect#vercel",
+  "repository": "https://github.com/youjunjer/nmking-plugins",
+  "keywords": [
+    "nmking",
+    "service-guide",
+    "vercel"
+  ],
+  "extensions": {
+    "com.openai": {
+      "onboardingSkill": "./skills/nmking-vercel-connect/SKILL.md",
+      "interface": {
+        "displayName": "Vercel",
+        "shortDescription": "Vercel 連線指南",
+        "longDescription": "NMKING 整理的 Vercel 連線與驗證指南。雲端工具選 MCP，本機開發、建置和部署可選 Vercel CLI。 此版本只提供專屬 Skill 與文件，不內建或預先啟用 MCP；帳號與權限需個別確認。非服務供應商官方外掛。",
+        "developerName": "小霸王有限公司 / NMKING",
+        "category": "Productivity",
+        "capabilities": [],
+        "websiteURL": "https://ai.nmking.io/connect#vercel",
+        "logo": "./skills/nmking-vercel-connect/assets/icon.svg",
+        "logoDark": "./skills/nmking-vercel-connect/assets/icon.svg",
+        "composerIcon": "./skills/nmking-vercel-connect/assets/icon.svg",
+        "composerIconDark": "./skills/nmking-vercel-connect/assets/icon.svg",
+        "brandColor": "#000000",
+        "defaultPrompt": [
+          "協助我連接 Vercel，先確認既有連線及 MCP／CLI 方案，需要授權時讓我確認。"
+        ]
+      }
+    }
+  }
+}

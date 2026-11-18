@@ -1,0 +1,36 @@
+{
+  "name": "nmking-netlify",
+  "version": "0.1.0",
+  "description": "NMKING-authored Netlify connection guide. Skills only; no preconfigured MCP or authorization.",
+  "author": {
+    "name": "小霸王有限公司 / NMKING",
+    "email": "nmkingtw@gmail.com",
+    "url": "https://ai.nmking.io"
+  },
+  "homepage": "https://ai.nmking.io/connect#netlify",
+  "repository": "https://github.com/youjunjer/nmking-plugins",
+  "keywords": [
+    "nmking",
+    "service-guide",
+    "netlify"
+  ],
+  "skills": "./skills/",
+  "onboardingSkill": "./skills/nmking-netlify-connect/SKILL.md",
+  "interface": {
+    "displayName": "Netlify",
+    "shortDescription": "Netlify 連線指南",
+    "longDescription": "NMKING 整理的 Netlify 連線與驗證指南。MCP 管理雲端專案與部署，本機 dev、build、目錄部署可選官方 CLI。 此版本只提供專屬 Skill 與文件，不內建或預先啟用 MCP；帳號與權限需個別確認。非服務供應商官方外掛。",
+    "developerName": "小霸王有限公司 / NMKING",
+    "category": "Productivity",
+    "capabilities": [],
+    "websiteURL": "https://ai.nmking.io/connect#netlify",
+    "logo": "./skills/nmking-netlify-connect/assets/icon.svg",
+    "logoDark": "./skills/nmking-netlify-connect/assets/icon.svg",
+    "composerIcon": "./skills/nmking-netlify-connect/assets/icon.svg",
+    "composerIconDark": "./skills/nmking-netlify-connect/assets/icon.svg",
+    "brandColor": "#007F76",
+    "defaultPrompt": [
+      "協助我連接 Netlify，先確認既有連線及 MCP／CLI 方案，需要授權時讓我確認。"
+    ]
+  }
+}

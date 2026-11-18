@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "service_id": "vercel",
+  "plugin_version": "0.1.0",
+  "guide_revision": "2026-11-14.1",
+  "source_url": "https://ai.nmking.io/connect/services/vercel.json",
+  "files": {
+    "service.md": "7b6d32c7c90effb62876cd6e0f2a428b44e777c8b7e4e320ec0c625ca9833892",
+    "service.json": "fc6da4488c49e43e385970a2482b930c71fc271c31cce11833e868ed13dfdbd6",
+    "../assets/icon.svg": "d6bb271c3e50d9ec57aec8af651be8b1eb513a6dd964eb1d0ffb4cee39d70419"
+  }
+}

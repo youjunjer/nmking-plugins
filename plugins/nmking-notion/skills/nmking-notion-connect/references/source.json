@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "service_id": "notion",
+  "plugin_version": "0.1.0",
+  "guide_revision": "2026-11-14.1",
+  "source_url": "https://ai.nmking.io/connect/services/notion.json",
+  "files": {
+    "service.md": "4e489203ac78f7aa3998697a831a619c12bbf973f3c3be88da8fafc15d575bc7",
+    "service.json": "e698cd6b328db13e4750e7d9d28797e39ed23a34205623c7de85359a5ffb2254",
+    "../assets/icon.svg": "bcd58a4aadc46eb7b8a642e96017532bc69368c35ee2a0667d31027be0d110ba"
+  }
+}

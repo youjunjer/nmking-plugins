@@ -1,0 +1,36 @@
+{
+  "name": "nmking-colab",
+  "version": "0.1.0",
+  "description": "NMKING-authored Google Colab connection guide. Skills only; no preconfigured MCP or authorization.",
+  "author": {
+    "name": "小霸王有限公司 / NMKING",
+    "email": "nmkingtw@gmail.com",
+    "url": "https://ai.nmking.io"
+  },
+  "homepage": "https://ai.nmking.io/connect#colab",
+  "repository": "https://github.com/youjunjer/nmking-plugins",
+  "keywords": [
+    "nmking",
+    "service-guide",
+    "colab"
+  ],
+  "skills": "./skills/",
+  "onboardingSkill": "./skills/nmking-colab-connect/SKILL.md",
+  "interface": {
+    "displayName": "Google Colab",
+    "shortDescription": "Google Colab 連線指南",
+    "longDescription": "NMKING 整理的 Google Colab 連線與驗證指南。遠端 MCP 管 runtime 與執行程式，認證尚未在本機 Codex 驗證，不列即用連線。 此版本只提供專屬 Skill 與文件，不內建或預先啟用 MCP；帳號與權限需個別確認。非服務供應商官方外掛。",
+    "developerName": "小霸王有限公司 / NMKING",
+    "category": "Productivity",
+    "capabilities": [],
+    "websiteURL": "https://ai.nmking.io/connect#colab",
+    "logo": "./skills/nmking-colab-connect/assets/icon.svg",
+    "logoDark": "./skills/nmking-colab-connect/assets/icon.svg",
+    "composerIcon": "./skills/nmking-colab-connect/assets/icon.svg",
+    "composerIconDark": "./skills/nmking-colab-connect/assets/icon.svg",
+    "brandColor": "#8A5A00",
+    "defaultPrompt": [
+      "協助我連接 Google Colab，先確認既有連線及 MCP／CLI 方案，需要授權時讓我確認。"
+    ]
+  }
+}

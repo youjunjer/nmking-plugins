@@ -1,0 +1,40 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "nmking-padlet",
+  "version": "0.1.0",
+  "description": "NMKING-authored Padlet connection guide. Skills only; no preconfigured MCP or authorization.",
+  "author": {
+    "name": "小霸王有限公司 / NMKING",
+    "email": "nmkingtw@gmail.com",
+    "url": "https://ai.nmking.io"
+  },
+  "homepage": "https://ai.nmking.io/connect#padlet",
+  "repository": "https://github.com/youjunjer/nmking-plugins",
+  "keywords": [
+    "nmking",
+    "service-guide",
+    "padlet"
+  ],
+  "extensions": {
+    "com.openai": {
+      "onboardingSkill": "./skills/nmking-padlet-connect/SKILL.md",
+      "interface": {
+        "displayName": "Padlet",
+        "shortDescription": "Padlet 連線指南",
+        "longDescription": "NMKING 整理的 Padlet 連線與驗證指南。官方 MCP 管理看板與貼文；不以唯讀 API 輔助程式當完整操作方案。 此版本只提供專屬 Skill 與文件，不內建或預先啟用 MCP；帳號與權限需個別確認。非服務供應商官方外掛。",
+        "developerName": "小霸王有限公司 / NMKING",
+        "category": "Productivity",
+        "capabilities": [],
+        "websiteURL": "https://ai.nmking.io/connect#padlet",
+        "logo": "./skills/nmking-padlet-connect/assets/icon.svg",
+        "logoDark": "./skills/nmking-padlet-connect/assets/icon.svg",
+        "composerIcon": "./skills/nmking-padlet-connect/assets/icon.svg",
+        "composerIconDark": "./skills/nmking-padlet-connect/assets/icon.svg",
+        "brandColor": "#D51858",
+        "defaultPrompt": [
+          "協助我連接 Padlet，先確認既有連線及 MCP／CLI 方案，需要授權時讓我確認。"
+        ]
+      }
+    }
+  }
+}

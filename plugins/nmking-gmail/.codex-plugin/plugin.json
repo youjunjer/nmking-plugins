@@ -1,0 +1,36 @@
+{
+  "name": "nmking-gmail",
+  "version": "0.1.0",
+  "description": "NMKING-authored Gmail connection guide. Skills only; no preconfigured MCP or authorization.",
+  "author": {
+    "name": "小霸王有限公司 / NMKING",
+    "email": "nmkingtw@gmail.com",
+    "url": "https://ai.nmking.io"
+  },
+  "homepage": "https://ai.nmking.io/connect#gmail",
+  "repository": "https://github.com/youjunjer/nmking-plugins",
+  "keywords": [
+    "nmking",
+    "service-guide",
+    "gmail"
+  ],
+  "skills": "./skills/",
+  "onboardingSkill": "./skills/nmking-gmail-connect/SKILL.md",
+  "interface": {
+    "displayName": "Gmail",
+    "shortDescription": "Gmail 連線指南",
+    "longDescription": "NMKING 整理的 Gmail 連線與驗證指南。文件列有讀信、草稿、寄信、回覆、附件、標籤及垃圾桶工具；不得把內建 Gmail 連接器的結果算成本方案通過。 此版本只提供專屬 Skill 與文件，不內建或預先啟用 MCP；帳號與權限需個別確認。此方案透過 Composio 第三方 MCP，不是 Google 官方 MCP。",
+    "developerName": "小霸王有限公司 / NMKING",
+    "category": "Productivity",
+    "capabilities": [],
+    "websiteURL": "https://ai.nmking.io/connect#gmail",
+    "logo": "./skills/nmking-gmail-connect/assets/icon.svg",
+    "logoDark": "./skills/nmking-gmail-connect/assets/icon.svg",
+    "composerIcon": "./skills/nmking-gmail-connect/assets/icon.svg",
+    "composerIconDark": "./skills/nmking-gmail-connect/assets/icon.svg",
+    "brandColor": "#CA3024",
+    "defaultPrompt": [
+      "協助我連接 Gmail，先確認既有連線及 MCP／CLI 方案，需要授權時讓我確認。"
+    ]
+  }
+}

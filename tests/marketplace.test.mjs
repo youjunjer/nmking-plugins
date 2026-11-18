@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import { access, lstat, readFile, readdir } from "node:fs/promises";
 import test from "node:test";
 import { assertPublicDocument, checkPackage, references, root, serviceIds } from "../scripts/sync-connect.mjs";
+import { readCatalog } from "../scripts/build-service-plugins.mjs";
 
 const read = (path) => readFile(new URL(path, root), "utf8");
 const json = async (path) => JSON.parse(await read(path));
@@ -11,18 +12,20 @@ const marketplace = await json(".agents/plugins/marketplace.json");
 const portable = await json(directory + "plugin.json");
 const compatibility = await json(directory + ".codex-plugin/plugin.json");
 const skill = await read(skillRoot + "SKILL.md");
+const services = (await readCatalog()).services;
 
-test("one discoverable marketplace entry resolves inside the repository", async () => {
+test("main marketplace exposes independently registered services, not the legacy aggregate", async () => {
   assert.equal(marketplace.name, "nmking-plugins");
   assert.equal(marketplace.interface.displayName, "NMKING 外掛市集");
-  assert.equal(marketplace.plugins.length, 1);
-  const entry = marketplace.plugins[0];
-  assert.equal(entry.name, "nmking-connect");
-  assert.deepEqual(entry.source, { source: "local", path: "./plugins/nmking-connect" });
-  assert.equal(entry.policy.installation, "AVAILABLE");
-  assert.equal(entry.policy.authentication, "ON_INSTALL");
-  assert.equal(entry.category, "Productivity");
-  await access(new URL(entry.source.path + "/plugin.json", root));
+  assert.equal(marketplace.plugins.length, services.length);
+  assert.deepEqual(marketplace.plugins.map((p) => p.name), services.map((s) => `nmking-${s.id}`));
+  for (const entry of marketplace.plugins) {
+    assert.deepEqual(entry.source, { source: "local", path: `./plugins/${entry.name}` });
+    assert.equal(entry.policy.installation, "AVAILABLE");
+    assert.equal(entry.policy.authentication, "ON_INSTALL");
+    assert.equal(entry.category, "Productivity");
+    await access(new URL(entry.source.path + "/plugin.json", root));
+  }
 });
 
 test("portable and compatibility manifests agree on identity and presentation", () => {
@@ -137,7 +140,7 @@ test("public-document guard rejects credential and private-workspace leakage", (
 test("README provides Git marketplace setup and does not claim universal directory listing", async () => {
   const readme = await read("README.md");
   assert.match(readme, /codex plugin marketplace add youjunjer\/nmking-plugins --ref main/);
-  assert.match(readme, /codex plugin add nmking-connect@nmking-plugins/);
+  assert.match(readme, /codex plugin add nmking-padlet@nmking-plugins/);
   assert.match(readme, /不是 OpenAI 內建公開目錄/);
   assert.match(readme, /稀疏路徑 \| 留空/);
 });

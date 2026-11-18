@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "service_id": "github",
+  "plugin_version": "0.1.0",
+  "guide_revision": "2026-11-14.1",
+  "source_url": "https://ai.nmking.io/connect/services/github.json",
+  "files": {
+    "service.md": "8f2517a87132db8eaf1406735899aa493c73bc3d03205dc14d4b20d9e35221b3",
+    "service.json": "d45d816b22cdf74bd4cc4bc6c7ece496291804ca74a4fd36ddc4267f77c9ce35",
+    "../assets/icon.svg": "579c7cf5bebab3e8f2fc70b226508bd12c931de14a70e02296792c7afa243530"
+  }
+}

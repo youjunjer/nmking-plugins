@@ -1,0 +1,40 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "nmking-google-drive",
+  "version": "0.1.0",
+  "description": "NMKING-authored Google Drive connection guide. Skills only; no preconfigured MCP or authorization.",
+  "author": {
+    "name": "小霸王有限公司 / NMKING",
+    "email": "nmkingtw@gmail.com",
+    "url": "https://ai.nmking.io"
+  },
+  "homepage": "https://ai.nmking.io/connect#google-drive",
+  "repository": "https://github.com/youjunjer/nmking-plugins",
+  "keywords": [
+    "nmking",
+    "service-guide",
+    "google-drive"
+  ],
+  "extensions": {
+    "com.openai": {
+      "onboardingSkill": "./skills/nmking-google-drive-connect/SKILL.md",
+      "interface": {
+        "displayName": "Google Drive",
+        "shortDescription": "Google Drive 連線指南",
+        "longDescription": "NMKING 整理的 Google Drive 連線與驗證指南。在指定測試資料夾建立、寫入、修改、下載合成文字檔並移至垃圾桶；不推論已測分享權限、所有 Office 格式或永久刪除。 此版本只提供專屬 Skill 與文件，不內建或預先啟用 MCP；帳號與權限需個別確認。此方案透過 Composio 第三方 MCP，不是 Google 官方 MCP。",
+        "developerName": "小霸王有限公司 / NMKING",
+        "category": "Productivity",
+        "capabilities": [],
+        "websiteURL": "https://ai.nmking.io/connect#google-drive",
+        "logo": "./skills/nmking-google-drive-connect/assets/icon.svg",
+        "logoDark": "./skills/nmking-google-drive-connect/assets/icon.svg",
+        "composerIcon": "./skills/nmking-google-drive-connect/assets/icon.svg",
+        "composerIconDark": "./skills/nmking-google-drive-connect/assets/icon.svg",
+        "brandColor": "#2568CB",
+        "defaultPrompt": [
+          "協助我連接 Google Drive，先確認既有連線及 MCP／CLI 方案，需要授權時讓我確認。"
+        ]
+      }
+    }
+  }
+}

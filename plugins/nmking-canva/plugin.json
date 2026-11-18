@@ -1,0 +1,40 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "nmking-canva",
+  "version": "0.1.0",
+  "description": "NMKING-authored Canva connection guide. Skills only; no preconfigured MCP or authorization.",
+  "author": {
+    "name": "小霸王有限公司 / NMKING",
+    "email": "nmkingtw@gmail.com",
+    "url": "https://ai.nmking.io"
+  },
+  "homepage": "https://ai.nmking.io/connect#canva",
+  "repository": "https://github.com/youjunjer/nmking-plugins",
+  "keywords": [
+    "nmking",
+    "service-guide",
+    "canva"
+  ],
+  "extensions": {
+    "com.openai": {
+      "onboardingSkill": "./skills/nmking-canva-connect/SKILL.md",
+      "interface": {
+        "displayName": "Canva",
+        "shortDescription": "Canva 連線指南",
+        "longDescription": "NMKING 整理的 Canva 連線與驗證指南。搜尋、建立與編輯 Canva 設計及簡報。 此版本只提供專屬 Skill 與文件，不內建或預先啟用 MCP；帳號與權限需個別確認。非服務供應商官方外掛。",
+        "developerName": "小霸王有限公司 / NMKING",
+        "category": "Productivity",
+        "capabilities": [],
+        "websiteURL": "https://ai.nmking.io/connect#canva",
+        "logo": "./skills/nmking-canva-connect/assets/icon.svg",
+        "logoDark": "./skills/nmking-canva-connect/assets/icon.svg",
+        "composerIcon": "./skills/nmking-canva-connect/assets/icon.svg",
+        "composerIconDark": "./skills/nmking-canva-connect/assets/icon.svg",
+        "brandColor": "#007F8B",
+        "defaultPrompt": [
+          "協助我連接 Canva，先確認既有連線及 MCP／CLI 方案，需要授權時讓我確認。"
+        ]
+      }
+    }
+  }
+}

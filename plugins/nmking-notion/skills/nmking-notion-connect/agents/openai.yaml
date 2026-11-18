@@ -1,0 +1,7 @@
+interface:
+  display_name: "Notion"
+  short_description: "使用 NMKING 專屬指南，協助設定與驗證 Notion 的 MCP／CLI 服務連線"
+  icon_small: "./assets/icon.svg"
+  icon_large: "./assets/icon.svg"
+  brand_color: "#000000"
+  default_prompt: "使用 $nmking-notion-connect 協助我連接 Notion，先確認方案，需要授權時讓我確認。"

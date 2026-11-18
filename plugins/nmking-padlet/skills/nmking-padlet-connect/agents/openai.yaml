@@ -1,0 +1,7 @@
+interface:
+  display_name: "Padlet"
+  short_description: "使用 NMKING 專屬指南，協助設定與驗證 Padlet 的 MCP／CLI 服務連線"
+  icon_small: "./assets/icon.svg"
+  icon_large: "./assets/icon.svg"
+  brand_color: "#D51858"
+  default_prompt: "使用 $nmking-padlet-connect 協助我連接 Padlet，先確認方案，需要授權時讓我確認。"

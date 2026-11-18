@@ -1,0 +1,40 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "nmking-google-classroom",
+  "version": "0.1.0",
+  "description": "NMKING-authored Google Classroom connection guide. Skills only; no preconfigured MCP or authorization.",
+  "author": {
+    "name": "小霸王有限公司 / NMKING",
+    "email": "nmkingtw@gmail.com",
+    "url": "https://ai.nmking.io"
+  },
+  "homepage": "https://ai.nmking.io/connect#google-classroom",
+  "repository": "https://github.com/youjunjer/nmking-plugins",
+  "keywords": [
+    "nmking",
+    "service-guide",
+    "google-classroom"
+  ],
+  "extensions": {
+    "com.openai": {
+      "onboardingSkill": "./skills/nmking-google-classroom-connect/SKILL.md",
+      "interface": {
+        "displayName": "Google Classroom",
+        "shortDescription": "Google Classroom 連線指南",
+        "longDescription": "NMKING 整理的 Google Classroom 連線與驗證指南。管理指定課程的作業、文字教材與公告，下載學生附件並評分；不要將課程建立的 403 誤當整個 Classroom 不支援。 此版本只提供專屬 Skill 與文件，不內建或預先啟用 MCP；帳號與權限需個別確認。此方案透過 Composio 第三方 MCP，不是 Google 官方 MCP。",
+        "developerName": "小霸王有限公司 / NMKING",
+        "category": "Productivity",
+        "capabilities": [],
+        "websiteURL": "https://ai.nmking.io/connect#google-classroom",
+        "logo": "./skills/nmking-google-classroom-connect/assets/icon.svg",
+        "logoDark": "./skills/nmking-google-classroom-connect/assets/icon.svg",
+        "composerIcon": "./skills/nmking-google-classroom-connect/assets/icon.svg",
+        "composerIconDark": "./skills/nmking-google-classroom-connect/assets/icon.svg",
+        "brandColor": "#08783F",
+        "defaultPrompt": [
+          "協助我連接 Google Classroom，先確認既有連線及 MCP／CLI 方案，需要授權時讓我確認。"
+        ]
+      }
+    }
+  }
+}

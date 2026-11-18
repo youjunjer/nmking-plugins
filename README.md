@@ -1,10 +1,11 @@
 # NMKING 外掛市集
 
-供 Codex 引入的 Git 市集。第一個外掛 **NMKING Connect** 將現有 13 項服務的 AI
-連線規格打包為可安裝 Skill，協助選擇 MCP／CLI、沿用既有連線、完成個人授權與驗證。
+供 Codex 引入的 Git 市集。**一項服務、一個圖示、一個可獨立安裝的外掛。**
+目前有 13 項服務；每個外掛只包含自己的 NMKING 操作指南、服務規格與圖示。
 
-此外掛不包含服務登入憑證、第三方工具實作、平台後端、Hooks 或預先啟用的 MCP。
-安裝不會自動連接全部帳號，也不代表所有操作都已測試通過。
+這一版先拆分圖示與安裝單位，**仍是 Skill 指南外掛，不是預先設定好的 MCP 連接器**。
+安裝不會啟用 MCP、不會安裝其他服務，也不會替使用者完成帳號授權。
+Codex 會依使用者選擇，再協助設定 MCP 或 CLI。
 
 ## 加入市集
 
@@ -13,74 +14,91 @@
 | 欄位 | 內容 |
 | --- | --- |
 | 來源 | `youjunjer/nmking-plugins` |
-| Git 參照 | `main`；固定版本可用 `v0.1.1` |
+| Git 參照 | `main`；固定版本可用 `v0.2.0` |
 | 稀疏路徑 | 留空 |
 
-加入後選擇 **NMKING 外掛市集**，安裝 **NMKING Connect**。
-若設定稀疏路徑，必須同時包含 `.agents/plugins` 與 `plugins/nmking-connect`，
-只取市集目錄會缺少外掛內容。
+加入後選擇 **NMKING 外掛市集**，只安裝需要的服務。不要只取
+`plugins/nmking-connect`，那是舊版整合包；若使用稀疏路徑，需包含
+`.agents/plugins` 及所需的個別外掛目錄。
 
-支援相關命令的 Codex CLI 也可使用：
+支援相關命令的 Codex CLI 也可使用，例如只安裝 Padlet：
 
 ```sh
 codex plugin marketplace add youjunjer/nmking-plugins --ref main
-codex plugin add nmking-connect@nmking-plugins
+codex plugin add nmking-padlet@nmking-plugins
 ```
 
-安裝後在新對話輸入，例如：
+已加入 `main` 市集時，先更新清單：
 
-> 使用 NMKING Connect 幫我連接 Padlet。先比較可用方案，沿用正確既有連線；
-> 需要新增或擴大權限時，先讓我確認。
+```sh
+codex plugin marketplace upgrade nmking-plugins
+```
 
-只檢查可否連線時，不會自動執行寫入測試。需要完整操作驗證時，再指定可拋棄資料、
-費用與清理範圍。帳號登入與授權仍由各位使用者自行確認。
+固定在 `v0.1.0` 或 `v0.1.1` 的 Git 參照需改成 `main` 或 `v0.2.0`，
+才會取得新的 13 項服務清單。
 
 ## 13 項服務
 
-Canva、GitHub、Notion、Padlet、Kahoot!、Vercel、Netlify、Cloudflare、Google Colab、
-Google Classroom、Google Drive、Google Calendar、Gmail。
+| 圖示 | 服務 | 獨立外掛名稱 |
+| --- | --- | --- |
+| ![Canva](plugins/nmking-canva/skills/nmking-canva-connect/assets/icon.svg) | [Canva](plugins/nmking-canva/README.md) | `nmking-canva` |
+| ![GitHub](plugins/nmking-github/skills/nmking-github-connect/assets/icon.svg) | [GitHub](plugins/nmking-github/README.md) | `nmking-github` |
+| ![Notion](plugins/nmking-notion/skills/nmking-notion-connect/assets/icon.svg) | [Notion](plugins/nmking-notion/README.md) | `nmking-notion` |
+| ![Padlet](plugins/nmking-padlet/skills/nmking-padlet-connect/assets/icon.svg) | [Padlet](plugins/nmking-padlet/README.md) | `nmking-padlet` |
+| ![Kahoot!](plugins/nmking-kahoot/skills/nmking-kahoot-connect/assets/icon.svg) | [Kahoot!](plugins/nmking-kahoot/README.md) | `nmking-kahoot` |
+| ![Vercel](plugins/nmking-vercel/skills/nmking-vercel-connect/assets/icon.svg) | [Vercel](plugins/nmking-vercel/README.md) | `nmking-vercel` |
+| ![Netlify](plugins/nmking-netlify/skills/nmking-netlify-connect/assets/icon.svg) | [Netlify](plugins/nmking-netlify/README.md) | `nmking-netlify` |
+| ![Cloudflare](plugins/nmking-cloudflare/skills/nmking-cloudflare-connect/assets/icon.svg) | [Cloudflare](plugins/nmking-cloudflare/README.md) | `nmking-cloudflare` |
+| ![Google Colab](plugins/nmking-colab/skills/nmking-colab-connect/assets/icon.svg) | [Google Colab](plugins/nmking-colab/README.md) | `nmking-colab` |
+| ![Google Classroom](plugins/nmking-google-classroom/skills/nmking-google-classroom-connect/assets/icon.svg) | [Google Classroom](plugins/nmking-google-classroom/README.md) | `nmking-google-classroom` |
+| ![Google Drive](plugins/nmking-google-drive/skills/nmking-google-drive-connect/assets/icon.svg) | [Google Drive](plugins/nmking-google-drive/README.md) | `nmking-google-drive` |
+| ![Google Calendar](plugins/nmking-google-calendar/skills/nmking-google-calendar-connect/assets/icon.svg) | [Google Calendar](plugins/nmking-google-calendar/README.md) | `nmking-google-calendar` |
+| ![Gmail](plugins/nmking-gmail/skills/nmking-gmail-connect/assets/icon.svg) | [Gmail](plugins/nmking-gmail/README.md) | `nmking-gmail` |
 
-- [打包服務索引與歷史測試狀態](plugins/nmking-connect/skills/nmking-service-connect/references/index.md)
-- [AI Skill 入口](plugins/nmking-connect/skills/nmking-service-connect/SKILL.md)
-- [網頁版連線規格](https://ai.nmking.io/connect)
+例如安裝 Padlet 後，在新對話輸入：
+
+> 使用 Padlet 連線指南幫我連接 Padlet。沿用正確既有連線；需要新增或擴大權限時，先讓我確認。
 
 Google Classroom／Drive／Calendar／Gmail 的此方案由 **Composio 第三方 MCP** 提供，
-不是 Google 官方 MCP。Classroom 建課受限、部分服務尚未測試等狀態會保留在規格中。
-歷史測試通過不保證新使用者仍已登入、具有相同權限或可執行所有功能。
+不是 Google 官方 MCP。歷史測試結果與限制完整保留，不能當成新使用者已登入或所有功能都已測試成功。
 
-## 更新與開發
+## 新增與更新
 
-使用 Node.js 20.19 以上版本，不需安裝 npm 相依套件：
+往後新服務一律建立獨立外掛。各自管理版本、圖示、Skill、服務文件與未來可能加入的 MCP 設定；
+不再只加進舊版總覽。請看 [新增服務規則](docs/ADDING_A_SERVICE.md)。
+
+使用 Node.js 20.19 以上版本，不需 npm 相依套件：
 
 ```sh
+npm run build:services
 npm test
 npm run check
 ```
 
-維護者更新公開規格後，先同步並驗證，再更新兩份 manifest 的外掛版本、Git 版本標籤
-與本文件的固定版本範例：
+平常建置與檢查不連網、不執行帳號授權。`catalog/services.json` 控制主清單與每個服務的版本；
+每個外掛自己的 `references/service.md`、`service.json` 是文件來源，建置不會從舊包覆寫它們。
+只修改某項服務時，僅提高該服務版本，再建置與驗證。
 
-```sh
-npm run sync:connect
-npm test
-npm run check
-```
-
-`sync:connect` 僅讀取 `https://ai.nmking.io/connect` 的公開文件，不會連接任何使用者帳號。
-要使用既有公開產物資料夾，可加 `-- --source /absolute/path/to/public/connect`。
+`sync:connect` 是舊版整合包的公開文件匯入器，不會發布到各獨立外掛。
 不要為了更新文件而改寫原有 `tested_on`、執行 Google 授權或重跑真實資源測試。
 
+## 舊版與來源
+
+舊版 [NMKING Connect 整合包](plugins/nmking-connect/) 與固定標籤 `v0.1.0`、`v0.1.1` 保留，
+但新版主清單只列 13 項個別服務，不多放一個整合入口。不會替使用者解除安裝舊包。
+需要舊整合包時可使用原固定版本；新使用者請選個別服務。
+
+- [原始網頁連線規格](https://ai.nmking.io/connect)
+- [圖示來源與授權](third_party/simple-icons/README.md)
+
 本儲存庫是 **使用者自行加入的自訂市集**，不是 OpenAI 內建公開目錄的上架／審查結果。
-第三方名稱與商標屬各自權利人；NMKING 發行的是自己的操作規格與導引。
+所有指南由 NMKING 整理，非第三方服務供應商官方外掛；品牌名稱與商標屬各自權利人。
 
 ## 版本紀錄
 
-- `0.1.1`：補上外掛清單、對話輸入區與 Skill 圖示；沿用網站的 NMKING N 圖示，
-  來源為公開網站的 [favicon.svg](https://ai.nmking.io/favicon.svg)。服務規格與授權方式不變。
-- `0.1.0`：首次發布 13 項服務規格。
-
-已安裝 `0.1.0` 的使用者需要更新市集並更新外掛；固定在 `v0.1.0` 的 Git 參照
-也需改成 `main` 或 `v0.1.1`，舊版不會自動出現新圖示。
+- `0.2.0`：主市集拆為 13 個可獨立安裝的服務圖示；每個服務外掛初版為 `0.1.0`。
+- `0.1.1`：補上舊整合包的清單、輸入區與 Skill 圖示。
+- `0.1.0`：首次發布 13 項服務的整合指南。
 
 ## 聯絡
 

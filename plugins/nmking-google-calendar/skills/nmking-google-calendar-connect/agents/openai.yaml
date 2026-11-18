@@ -1,0 +1,7 @@
+interface:
+  display_name: "Google Calendar"
+  short_description: "使用 NMKING 專屬指南，協助設定與驗證 Google Calendar 的 MCP／CLI 服務連線"
+  icon_small: "./assets/icon.svg"
+  icon_large: "./assets/icon.svg"
+  brand_color: "#2568CB"
+  default_prompt: "使用 $nmking-google-calendar-connect 協助我連接 Google Calendar，先確認方案，需要授權時讓我確認。"

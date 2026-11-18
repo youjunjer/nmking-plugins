@@ -1,0 +1,36 @@
+{
+  "name": "nmking-google-calendar",
+  "version": "0.1.0",
+  "description": "NMKING-authored Google Calendar connection guide. Skills only; no preconfigured MCP or authorization.",
+  "author": {
+    "name": "小霸王有限公司 / NMKING",
+    "email": "nmkingtw@gmail.com",
+    "url": "https://ai.nmking.io"
+  },
+  "homepage": "https://ai.nmking.io/connect#google-calendar",
+  "repository": "https://github.com/youjunjer/nmking-plugins",
+  "keywords": [
+    "nmking",
+    "service-guide",
+    "google-calendar"
+  ],
+  "skills": "./skills/",
+  "onboardingSkill": "./skills/nmking-google-calendar-connect/SKILL.md",
+  "interface": {
+    "displayName": "Google Calendar",
+    "shortDescription": "Google Calendar 連線指南",
+    "longDescription": "NMKING 整理的 Google Calendar 連線與驗證指南。文件列有日曆與事件查詢、建立、更新、刪除及空檔查詢；不是本輪已驗證的能力。 此版本只提供專屬 Skill 與文件，不內建或預先啟用 MCP；帳號與權限需個別確認。此方案透過 Composio 第三方 MCP，不是 Google 官方 MCP。",
+    "developerName": "小霸王有限公司 / NMKING",
+    "category": "Productivity",
+    "capabilities": [],
+    "websiteURL": "https://ai.nmking.io/connect#google-calendar",
+    "logo": "./skills/nmking-google-calendar-connect/assets/icon.svg",
+    "logoDark": "./skills/nmking-google-calendar-connect/assets/icon.svg",
+    "composerIcon": "./skills/nmking-google-calendar-connect/assets/icon.svg",
+    "composerIconDark": "./skills/nmking-google-calendar-connect/assets/icon.svg",
+    "brandColor": "#2568CB",
+    "defaultPrompt": [
+      "協助我連接 Google Calendar，先確認既有連線及 MCP／CLI 方案，需要授權時讓我確認。"
+    ]
+  }
+}

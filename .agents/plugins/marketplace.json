@@ -5,10 +5,154 @@
   },
   "plugins": [
     {
-      "name": "nmking-connect",
+      "name": "nmking-canva",
       "source": {
         "source": "local",
-        "path": "./plugins/nmking-connect"
+        "path": "./plugins/nmking-canva"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "nmking-github",
+      "source": {
+        "source": "local",
+        "path": "./plugins/nmking-github"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "nmking-notion",
+      "source": {
+        "source": "local",
+        "path": "./plugins/nmking-notion"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "nmking-padlet",
+      "source": {
+        "source": "local",
+        "path": "./plugins/nmking-padlet"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "nmking-kahoot",
+      "source": {
+        "source": "local",
+        "path": "./plugins/nmking-kahoot"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "nmking-vercel",
+      "source": {
+        "source": "local",
+        "path": "./plugins/nmking-vercel"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "nmking-netlify",
+      "source": {
+        "source": "local",
+        "path": "./plugins/nmking-netlify"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "nmking-cloudflare",
+      "source": {
+        "source": "local",
+        "path": "./plugins/nmking-cloudflare"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "nmking-colab",
+      "source": {
+        "source": "local",
+        "path": "./plugins/nmking-colab"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "nmking-google-classroom",
+      "source": {
+        "source": "local",
+        "path": "./plugins/nmking-google-classroom"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "nmking-google-drive",
+      "source": {
+        "source": "local",
+        "path": "./plugins/nmking-google-drive"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "nmking-google-calendar",
+      "source": {
+        "source": "local",
+        "path": "./plugins/nmking-google-calendar"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "nmking-gmail",
+      "source": {
+        "source": "local",
+        "path": "./plugins/nmking-gmail"
       },
       "policy": {
         "installation": "AVAILABLE",

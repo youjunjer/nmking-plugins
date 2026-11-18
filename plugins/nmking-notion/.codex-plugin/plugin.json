@@ -1,0 +1,36 @@
+{
+  "name": "nmking-notion",
+  "version": "0.1.0",
+  "description": "NMKING-authored Notion connection guide. Skills only; no preconfigured MCP or authorization.",
+  "author": {
+    "name": "小霸王有限公司 / NMKING",
+    "email": "nmkingtw@gmail.com",
+    "url": "https://ai.nmking.io"
+  },
+  "homepage": "https://ai.nmking.io/connect#notion",
+  "repository": "https://github.com/youjunjer/nmking-plugins",
+  "keywords": [
+    "nmking",
+    "service-guide",
+    "notion"
+  ],
+  "skills": "./skills/",
+  "onboardingSkill": "./skills/nmking-notion-connect/SKILL.md",
+  "interface": {
+    "displayName": "Notion",
+    "shortDescription": "Notion 連線指南",
+    "longDescription": "NMKING 整理的 Notion 連線與驗證指南。一般頁面操作選 MCP，Workers 與終端 API 工作可選 ntn CLI。 此版本只提供專屬 Skill 與文件，不內建或預先啟用 MCP；帳號與權限需個別確認。非服務供應商官方外掛。",
+    "developerName": "小霸王有限公司 / NMKING",
+    "category": "Productivity",
+    "capabilities": [],
+    "websiteURL": "https://ai.nmking.io/connect#notion",
+    "logo": "./skills/nmking-notion-connect/assets/icon.svg",
+    "logoDark": "./skills/nmking-notion-connect/assets/icon.svg",
+    "composerIcon": "./skills/nmking-notion-connect/assets/icon.svg",
+    "composerIconDark": "./skills/nmking-notion-connect/assets/icon.svg",
+    "brandColor": "#000000",
+    "defaultPrompt": [
+      "協助我連接 Notion，先確認既有連線及 MCP／CLI 方案，需要授權時讓我確認。"
+    ]
+  }
+}
